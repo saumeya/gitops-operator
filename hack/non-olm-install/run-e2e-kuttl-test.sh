@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+
+WORKING_DIR=../..
+sequential_suite=$WORKING_DIR/test/openshift/e2e/sequential/
+parallel_suite=$WORKING_DIR/test/openshift/e2e/parallel/
+
+# Check if any argument is provided
+if [ $# -eq 0 ]; then
+    echo "No directory name provided, please add directory names as arguments while running the script"
+fi    
+
+# to run nightly tests, add the following files as params
+# 1-085_validate_dynamic_plugin_installation
+# 1-038_validate_productized_images
+# 1-051-validate_csv_permissions
+# 1-073_validate_rhsso
+# 1-077_validate_disable_dex_removed
+# 1-090_validate_permissions
+
+
+for dir in "$@"; do
+  if [ -d "$sequential_suite/$dir" ]; then
+    echo "Deleting directory $dir"
+    rm -rf "$sequential_suite/$dir"
+  elif [ -d "$parallel_suite/$dir" ]; then
+    echo "Deleting directory $dir"
+    rm -rf "$parallel_suite/$dir"  
+  else
+    echo "Directory $dir does not exist"
+  fi
+done
+
+script="$WORKING_DIR/scripts/run-kuttl-tests.sh"
+
+# Check if the file exists before executing it
+if [ -e "$script" ]; then
+    chmod +x "$script"
+    # Execute the script here
+    source "$script" sequential
+    source "$script" parallel
+else
+    echo "ERROR: Script file '$script' not found."
+fi
+
+
+# WIP for replacing subscription with deployments
