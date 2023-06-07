@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+export NON_OlM="true"
+
 WORKING_DIR=../..
 sequential_suite=$WORKING_DIR/test/openshift/e2e/sequential/
 parallel_suite=$WORKING_DIR/test/openshift/e2e/parallel/
@@ -29,6 +31,8 @@ for dir in "$@"; do
     echo "Directory $dir does not exist"
   fi
 done
+
+sed -i 's/openshift-operators/gitops-operator-system/g' $sequential_suite/1-018_validate_disable_default_instance/02-assert.yaml 
 
 script="$WORKING_DIR/scripts/run-kuttl-tests.sh"
 
