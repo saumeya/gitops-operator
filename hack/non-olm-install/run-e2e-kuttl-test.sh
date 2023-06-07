@@ -32,6 +32,8 @@ for dir in "$@"; do
   fi
 done
 
+#replace the namespace for assert in test file
+
 sed -i 's/openshift-operators/gitops-operator-system/g' $sequential_suite/1-018_validate_disable_default_instance/02-assert.yaml 
 
 script="$WORKING_DIR/scripts/run-kuttl-tests.sh"
