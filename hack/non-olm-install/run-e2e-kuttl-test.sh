@@ -47,6 +47,3 @@ if [ -e "$script" ]; then
 else
     echo "ERROR: Script file '$script' not found."
 fi
-
-
-# WIP for replacing subscription with deployments
