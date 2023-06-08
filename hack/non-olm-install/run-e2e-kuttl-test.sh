@@ -12,6 +12,7 @@ if [ $# -eq 0 ]; then
 fi    
 
 # to run nightly tests, add the following files as params
+# 1-031_validate_toolchain
 # 1-085_validate_dynamic_plugin_installation
 # 1-038_validate_productized_images
 # 1-051-validate_csv_permissions
@@ -34,7 +35,8 @@ done
 
 #replace the namespace for assert in test file
 
-sed -i 's/openshift-operators/gitops-operator-system/g' $sequential_suite/1-018_validate_disable_default_instance/02-assert.yaml 
+sed -i 's/openshift-operators/gitops-operator-system/g' $sequential_suite/1-018_validate_disable_default_instance/02-assert.yaml \
+  $sequential_suite/1-035_validate_argocd_secret_repopulate/04-check_controller_pod_status.yaml
 
 script="$WORKING_DIR/scripts/run-kuttl-tests.sh"
 
