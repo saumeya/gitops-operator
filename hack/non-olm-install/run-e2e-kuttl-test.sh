@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-export NON_OlM="true"
+export NON_OLM="true"
 
 WORKING_DIR=../..
 sequential_suite=$WORKING_DIR/test/openshift/e2e/sequential/
