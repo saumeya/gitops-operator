@@ -1,0 +1,68 @@
+{
+   "name": "",
+   "tests": 7,
+   "failures": 1,
+   "time": "1022.920",
+   "testsuite": [
+     {
+       "tests": 7,
+       "failures": 1,
+       "timestamp": "2023-06-08T15:38:57.552361037+05:30",
+       "time": "1012.898",
+       "name": "/home/skatyal/gitops-operator/scripts/../test/openshift/e2e/sequential",
+       "testcase": [
+         {
+           "classname": "sequential",
+           "name": "1-086_validate_rollouts_resources_creation",
+           "timestamp": "2023-06-08T15:38:57.553741212+05:30",
+           "time": "27.083",
+           "assertions": 10
+         },
+         {
+           "classname": "sequential",
+           "name": "1-001_validate_kam_service",
+           "timestamp": "2023-06-08T15:39:24.639270798+05:30",
+           "time": "16.380",
+           "assertions": 4
+         },
+         {
+           "classname": "sequential",
+           "name": "1-084_validate_prune_templates",
+           "timestamp": "2023-06-08T15:39:41.023192162+05:30",
+           "time": "12.472"
+         },
+         {
+           "classname": "sequential",
+           "name": "1-083_validate_apps_in_any_namespace",
+           "timestamp": "2023-06-08T15:39:53.507185029+05:30",
+           "time": "116.151",
+           "assertions": 68
+         },
+         {
+           "classname": "sequential",
+           "name": "1-078_validate_default_argocd_consoleLink",
+           "timestamp": "2023-06-08T15:41:49.664791611+05:30",
+           "time": "86.807",
+           "assertions": 6
+         },
+         {
+           "classname": "sequential",
+           "name": "1-077_validate_workload_status_monitoring_alert",
+           "timestamp": "2023-06-08T15:43:16.474918372+05:30",
+           "time": "6.467"
+         },
+         {
+           "classname": "sequential",
+           "name": "1-027_validate_operand_from_git",
+           "timestamp": "2023-06-08T15:43:22.949089114+05:30",
+           "time": "747.501",
+           "assertions": 12,
+           "failure": {
+             "text": "Get \"https://api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org:6443/apis/argoproj.io/v1alpha1/namespaces/test-1-27-custom/applications/guestbook\": dial tcp: lookup api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org on 127.0.0.1:53: no such host",
+             "message": "failed in step 3-create-app"
+           }
+         }
+       ]
+     }
+   ]
+ }

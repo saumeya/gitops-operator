@@ -1,0 +1,1012 @@
+2023/06/07 16:23:43 kutt-test config testdirs is overridden with args: [ /home/skatyal/gitops-operator/scripts/../test/openshift/e2e/sequential ]
+=== RUN   kuttl
+    harness.go:457: starting setup
+    harness.go:248: running tests using configured kubeconfig.
+I0607 16:23:45.375179  162559 request.go:655] Throttling request took 1.000131718s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/autoscaling/v2?timeout=32s
+    harness.go:285: Successful connection to cluster at: https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443
+I0607 16:23:55.396110  162559 request.go:655] Throttling request took 1.25067618s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/operators.coreos.com/v1?timeout=32s
+    harness.go:353: running tests
+    harness.go:74: going to run test suite with timeout of 720 seconds for each step
+    harness.go:365: testsuite: /home/skatyal/gitops-operator/scripts/../test/openshift/e2e/sequential has 28 tests
+=== RUN   kuttl/harness
+=== RUN   kuttl/harness/1-001_validate_kam_service
+=== PAUSE kuttl/harness/1-001_validate_kam_service
+=== RUN   kuttl/harness/1-002_validate_backend_service
+=== PAUSE kuttl/harness/1-002_validate_backend_service
+=== RUN   kuttl/harness/1-004_validate_argocd_installation
+=== PAUSE kuttl/harness/1-004_validate_argocd_installation
+=== RUN   kuttl/harness/1-005_validate_metrics
+=== PAUSE kuttl/harness/1-005_validate_metrics
+=== RUN   kuttl/harness/1-006_validate_machine_config
+=== PAUSE kuttl/harness/1-006_validate_machine_config
+=== RUN   kuttl/harness/1-008_validate-4.9CI-Failures
+=== PAUSE kuttl/harness/1-008_validate-4.9CI-Failures
+=== RUN   kuttl/harness/1-010_validate-ootb-manage-other-namespace
+=== PAUSE kuttl/harness/1-010_validate-ootb-manage-other-namespace
+=== RUN   kuttl/harness/1-018_validate_disable_default_instance
+=== PAUSE kuttl/harness/1-018_validate_disable_default_instance
+=== RUN   kuttl/harness/1-026-validate_backend_service_permissions
+=== PAUSE kuttl/harness/1-026-validate_backend_service_permissions
+=== RUN   kuttl/harness/1-027_validate_operand_from_git
+=== PAUSE kuttl/harness/1-027_validate_operand_from_git
+=== RUN   kuttl/harness/1-028_validate_run_on_infra
+=== PAUSE kuttl/harness/1-028_validate_run_on_infra
+=== RUN   kuttl/harness/1-031_validate_toolchain
+=== PAUSE kuttl/harness/1-031_validate_toolchain
+=== RUN   kuttl/harness/1-034_validate_custom_roles
+=== PAUSE kuttl/harness/1-034_validate_custom_roles
+=== RUN   kuttl/harness/1-035_validate_argocd_secret_repopulate
+=== PAUSE kuttl/harness/1-035_validate_argocd_secret_repopulate
+=== RUN   kuttl/harness/1-040_validate_quoted_RBAC_group_names
+=== PAUSE kuttl/harness/1-040_validate_quoted_RBAC_group_names
+=== RUN   kuttl/harness/1-041_validate_argocd_sync_alert
+=== PAUSE kuttl/harness/1-041_validate_argocd_sync_alert
+=== RUN   kuttl/harness/1-042_validate_status_host
+=== PAUSE kuttl/harness/1-042_validate_status_host
+=== RUN   kuttl/harness/1-050_validate_sso_config
+=== PAUSE kuttl/harness/1-050_validate_sso_config
+=== RUN   kuttl/harness/1-056_validate_managed-by
+=== PAUSE kuttl/harness/1-056_validate_managed-by
+=== RUN   kuttl/harness/1-064_validate_tcp_reset_error
+=== PAUSE kuttl/harness/1-064_validate_tcp_reset_error
+=== RUN   kuttl/harness/1-076_validate_single_deprecation_notice
+=== PAUSE kuttl/harness/1-076_validate_single_deprecation_notice
+=== RUN   kuttl/harness/1-077_validate_workload_status_monitoring_alert
+=== PAUSE kuttl/harness/1-077_validate_workload_status_monitoring_alert
+=== RUN   kuttl/harness/1-078_validate_default_argocd_consoleLink
+=== PAUSE kuttl/harness/1-078_validate_default_argocd_consoleLink
+=== RUN   kuttl/harness/1-083_validate_apps_in_any_namespace
+=== PAUSE kuttl/harness/1-083_validate_apps_in_any_namespace
+=== RUN   kuttl/harness/1-084_validate_prune_templates
+=== PAUSE kuttl/harness/1-084_validate_prune_templates
+=== RUN   kuttl/harness/1-085_validate_dynamic_plugin_installation
+=== PAUSE kuttl/harness/1-085_validate_dynamic_plugin_installation
+=== RUN   kuttl/harness/1-086_validate_rollouts_resources_creation
+=== PAUSE kuttl/harness/1-086_validate_rollouts_resources_creation
+=== RUN   kuttl/harness/1-087_validate_rollout_policyrules
+=== PAUSE kuttl/harness/1-087_validate_rollout_policyrules
+=== CONT  kuttl/harness/1-001_validate_kam_service
+    logger.go:42: 16:23:58 | 1-001_validate_kam_service | Creating namespace: kuttl-test-trusting-puma
+    logger.go:42: 16:23:58 | 1-001_validate_kam_service/1-check-kam-service | starting test step 1-check-kam-service
+    logger.go:42: 16:24:04 | 1-001_validate_kam_service/1-check-kam-service | test step completed 1-check-kam-service
+    logger.go:42: 16:24:04 | 1-001_validate_kam_service/2-check-route | starting test step 2-check-route
+    logger.go:42: 16:24:04 | 1-001_validate_kam_service/2-check-route | running command: [sh -c status=$(oc get -n openshift-gitops route kam -o json | jq -r .status)
+        route_admitted=$(echo "$status" | jq -r '.ingress[0].conditions[0].type')
+        route_status=$(echo "$status" | jq -r '.ingress[0].conditions[0].status')
+        route_host=$(echo "$status" | jq -r '.ingress[0].host')
+        router_name=$(echo "$status" | jq -r '.ingress[0].routerName')
+        route_wildcard_policy=$(echo "$status" | jq -r '.ingress[0].wildcardPolicy')
+        if test "$route_admitted" != "Admitted" -o "$route_status" != "True"; then
+          echo "Route not ready"
+          exit 1
+        fi
+        if test "$route_host" = ""; then
+          echo "Route has no host"
+          exit 1
+        fi
+        if test "$router_name" != "default"; then
+          echo "Router is not default"
+          exit 1
+        fi
+        if test "$route_wildcard_policy" != "None"; then
+          echo "Route wildcard policy is not None"
+          exit 1
+        fi
+        exit 0
+        ]
+I0607 16:24:09.114609  162559 request.go:655] Throttling request took 1.000159416s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/tekton.dev/v1alpha1?timeout=32s
+    logger.go:42: 16:24:12 | 1-001_validate_kam_service/2-check-route | test step completed 2-check-route
+    logger.go:42: 16:24:12 | 1-001_validate_kam_service/3-check-download | starting test step 3-check-download
+    logger.go:42: 16:24:12 | 1-001_validate_kam_service/3-check-download | running command: [sh -c set -e
+        base_url=$(oc get -n openshift-gitops route kam -o json | jq -r '.status.ingress[0].host')
+        curl -k --silent -o/dev/null "${base_url}/kam/kam_linux_amd64"
+        curl -k --silent -o/dev/null "${base_url}/kam/kam_darwin_amd64"
+        curl -k --silent -o/dev/null "${base_url}/kam/kam_windows_amd64.exe"
+        ]
+I0607 16:24:19.124674  162559 request.go:655] Throttling request took 2.949804102s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/storage.k8s.io/v1?timeout=32s
+    logger.go:42: 16:24:20 | 1-001_validate_kam_service/3-check-download | test step completed 3-check-download
+    logger.go:42: 16:24:20 | 1-001_validate_kam_service | skipping kubernetes event logging
+    logger.go:42: 16:24:20 | 1-001_validate_kam_service | Deleting namespace: kuttl-test-trusting-puma
+=== CONT  kuttl/harness/1-087_validate_rollout_policyrules
+    logger.go:42: 16:24:21 | 1-087_validate_rollout_policyrules | Creating namespace: kuttl-test-viable-toad
+    logger.go:42: 16:24:21 | 1-087_validate_rollout_policyrules/1-install-rolloutmanager | starting test step 1-install-rolloutmanager
+    logger.go:42: 16:24:29 | 1-087_validate_rollout_policyrules/1-install-rolloutmanager | RolloutManager:kuttl-test-viable-toad/example-rollout-manager created
+    logger.go:42: 16:36:30 | 1-087_validate_rollout_policyrules/1-install-rolloutmanager | test step failed 1-install-rolloutmanager
+    case.go:361: failed in step 1-install-rolloutmanager
+    case.go:363: roles.rbac.authorization.k8s.io "argo-rollouts" not found
+    logger.go:42: 16:36:30 | 1-087_validate_rollout_policyrules | skipping kubernetes event logging
+    logger.go:42: 16:36:31 | 1-087_validate_rollout_policyrules | Deleting namespace: kuttl-test-viable-toad
+=== CONT  kuttl/harness/1-086_validate_rollouts_resources_creation
+    logger.go:42: 16:36:31 | 1-086_validate_rollouts_resources_creation | Creating namespace: kuttl-test-feasible-polecat
+    logger.go:42: 16:36:31 | 1-086_validate_rollouts_resources_creation/1-install-rolloutmanager | starting test step 1-install-rolloutmanager
+I0607 16:36:33.837102  162559 request.go:655] Throttling request took 1.049677123s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/migration.k8s.io/v1alpha1?timeout=32s
+    logger.go:42: 16:36:37 | 1-086_validate_rollouts_resources_creation/1-install-rolloutmanager | RolloutManager:kuttl-test-feasible-polecat/example-rollout-manager created
+    logger.go:42: 16:48:38 | 1-086_validate_rollouts_resources_creation/1-install-rolloutmanager | test step failed 1-install-rolloutmanager
+    case.go:361: failed in step 1-install-rolloutmanager
+    case.go:363: serviceaccounts "argo-rollouts" not found
+    case.go:363: roles.rbac.authorization.k8s.io "argo-rollouts" not found
+    case.go:363: rolebindings.rbac.authorization.k8s.io "argo-rollouts" not found
+    case.go:363: clusterroles.rbac.authorization.k8s.io "argo-rollouts-aggregate-to-admin" not found
+    case.go:363: clusterroles.rbac.authorization.k8s.io "argo-rollouts-aggregate-to-edit" not found
+    case.go:363: clusterroles.rbac.authorization.k8s.io "argo-rollouts-aggregate-to-view" not found
+    case.go:363: secrets "argo-rollouts-notification-secret" not found
+    case.go:363: deployments.apps "argo-rollouts" not found
+    case.go:363: services "argo-rollouts-metrics" not found
+    logger.go:42: 16:48:38 | 1-086_validate_rollouts_resources_creation | skipping kubernetes event logging
+    logger.go:42: 16:48:39 | 1-086_validate_rollouts_resources_creation | Deleting namespace: kuttl-test-feasible-polecat
+=== CONT  kuttl/harness/1-085_validate_dynamic_plugin_installation
+    logger.go:42: 16:48:40 | 1-085_validate_dynamic_plugin_installation | Creating namespace: kuttl-test-infinite-loon
+    logger.go:42: 16:48:41 | 1-085_validate_dynamic_plugin_installation/1- | starting test step 1-
+I0607 16:48:44.572357  162559 request.go:655] Throttling request took 1.000133888s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/controlplane.operator.openshift.io/v1alpha1?timeout=32s
+    logger.go:42: 16:48:48 | 1-085_validate_dynamic_plugin_installation/1- | test step completed 1-
+    logger.go:42: 16:48:48 | 1-085_validate_dynamic_plugin_installation/2-install-dynamic-plugin | starting test step 2-install-dynamic-plugin
+    logger.go:42: 16:48:48 | 1-085_validate_dynamic_plugin_installation/2-install-dynamic-plugin | running command: [sh -c set -eo pipefail
+        
+        # Get CSV name and also OCP version.
+        csv_name=$(oc get csv -n openshift-operators | awk '/gitops-operator/ {print $1}')
+        ocp_version=$(oc version | awk '/Server Version/ {split($3,a,"-"); print a[1]}')
+        
+        # Patch the CSV to add the necessary env key:value for Dynamic Plugin
+        oc patch csv "${csv_name}" -n openshift-operators \
+        --type='json' \
+        -p='[{
+              "op": "add",
+              "path": "/spec/install/spec/deployments/0/spec/template/spec/containers/0/env/-",
+              "value": {
+                        "name": "DYNAMIC_PLUGIN_START_OCP_VERSION",
+                        "value": "'${ocp_version}'"
+              }
+        }]'
+        
+        # Sleep 10 seconds, so the resources are launched before next assert step.
+        sleep 5
+        
+        exit 0
+        ]
+    logger.go:42: 16:48:52 | 1-085_validate_dynamic_plugin_installation/2-install-dynamic-plugin | error: resource name may not be empty
+I0607 16:48:56.247223  162559 request.go:655] Throttling request took 1.048102136s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/psmdb.percona.com/v1-11-0?timeout=32s
+    case.go:361: failed in step 2-install-dynamic-plugin
+    case.go:363: exit status 1
+    logger.go:42: 16:48:59 | 1-085_validate_dynamic_plugin_installation | skipping kubernetes event logging
+    logger.go:42: 16:48:59 | 1-085_validate_dynamic_plugin_installation | Deleting namespace: kuttl-test-infinite-loon
+=== CONT  kuttl/harness/1-084_validate_prune_templates
+2023/06/07 16:48:59 object detected with no GVK Kind for path /home/skatyal/gitops-operator/test/openshift/e2e/sequential/1-084_validate_prune_templates/02-prune-duplicateGVK-resource.yaml
+2023/06/07 16:48:59 object detected with no GVK Kind for path /home/skatyal/gitops-operator/test/openshift/e2e/sequential/1-084_validate_prune_templates/03-errors.yaml
+2023/06/07 16:48:59 object detected with no GVK Kind for path /home/skatyal/gitops-operator/test/openshift/e2e/sequential/1-084_validate_prune_templates/04-delete.yaml
+2023/06/07 16:48:59 object detected with no GVK Kind for path /home/skatyal/gitops-operator/test/openshift/e2e/sequential/1-084_validate_prune_templates/01-assert.yaml
+2023/06/07 16:48:59 object detected with no GVK Kind for path /home/skatyal/gitops-operator/test/openshift/e2e/sequential/1-084_validate_prune_templates/01-create-ns-managed-by.yaml
+    logger.go:42: 16:48:59 | 1-084_validate_prune_templates | Creating namespace: kuttl-test-neutral-gull
+    logger.go:42: 16:48:59 | 1-084_validate_prune_templates/1-create-ns-managed-by | starting test step 1-create-ns-managed-by
+    logger.go:42: 16:49:04 | 1-084_validate_prune_templates/1-create-ns-managed-by | test step completed 1-create-ns-managed-by
+    logger.go:42: 16:49:04 | 1-084_validate_prune_templates/2-prune-duplicateGVK-resource | starting test step 2-prune-duplicateGVK-resource
+I0607 16:49:06.422609  162559 request.go:655] Throttling request took 1.000300055s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/operators.coreos.com/v1alpha2?timeout=32s
+    logger.go:42: 16:49:09 | 1-084_validate_prune_templates/2-prune-duplicateGVK-resource | test step completed 2-prune-duplicateGVK-resource
+    logger.go:42: 16:49:09 | 1-084_validate_prune_templates/3- | starting test step 3-
+    logger.go:42: 16:49:14 | 1-084_validate_prune_templates/3- | test step completed 3-
+    logger.go:42: 16:49:14 | 1-084_validate_prune_templates/4-delete | starting test step 4-delete
+I0607 16:49:16.465193  162559 request.go:655] Throttling request took 1.799972172s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/discovery.k8s.io/v1?timeout=32s
+    logger.go:42: 16:49:18 | 1-084_validate_prune_templates/4-delete | test step completed 4-delete
+    logger.go:42: 16:49:18 | 1-084_validate_prune_templates | skipping kubernetes event logging
+    logger.go:42: 16:49:18 | 1-084_validate_prune_templates | Deleting namespace: kuttl-test-neutral-gull
+=== CONT  kuttl/harness/1-083_validate_apps_in_any_namespace
+    logger.go:42: 16:49:19 | 1-083_validate_apps_in_any_namespace | Ignoring errors.yaml as it does not match file name regexp: ^(\d+)-(?:[^\.]+)(?:\.yaml)?$
+    logger.go:42: 16:49:19 | 1-083_validate_apps_in_any_namespace | Creating namespace: kuttl-test-gorgeous-quetzal
+    logger.go:42: 16:49:19 | 1-083_validate_apps_in_any_namespace/1-create-ns-managed-by | starting test step 1-create-ns-managed-by
+    logger.go:42: 16:49:24 | 1-083_validate_apps_in_any_namespace/1-create-ns-managed-by | Namespace:/test-1-24-custom created
+    logger.go:42: 16:49:30 | 1-083_validate_apps_in_any_namespace/1-create-ns-managed-by | test step completed 1-create-ns-managed-by
+    logger.go:42: 16:49:30 | 1-083_validate_apps_in_any_namespace/2-add-source-ns | starting test step 2-add-source-ns
+I0607 16:49:32.384499  162559 request.go:655] Throttling request took 1.050646188s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/console.openshift.io/v1alpha1?timeout=32s
+Warning: unknown field "spec.sourceNamespaces"
+    logger.go:42: 16:49:35 | 1-083_validate_apps_in_any_namespace/2-add-source-ns | ArgoCD:openshift-gitops/openshift-gitops updated
+    logger.go:42: 16:49:41 | 1-083_validate_apps_in_any_namespace/2-add-source-ns | test step completed 2-add-source-ns
+    logger.go:42: 16:49:41 | 1-083_validate_apps_in_any_namespace/3-delete | starting test step 3-delete
+I0607 16:49:51.046660  162559 request.go:655] Throttling request took 1.00008171s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/operators.coreos.com/v1alpha2?timeout=32s
+    logger.go:42: 16:49:54 | 1-083_validate_apps_in_any_namespace/3-delete | test step completed 3-delete
+    logger.go:42: 16:49:54 | 1-083_validate_apps_in_any_namespace/4-change-source-namespaces | starting test step 4-change-source-namespaces
+    logger.go:42: 16:49:59 | 1-083_validate_apps_in_any_namespace/4-change-source-namespaces | ArgoCD:openshift-gitops/openshift-gitops updated
+    logger.go:42: 16:50:00 | 1-083_validate_apps_in_any_namespace/4-change-source-namespaces | test step completed 4-change-source-namespaces
+    logger.go:42: 16:50:00 | 1-083_validate_apps_in_any_namespace/5-create-ns-and-add-source-ns | starting test step 5-create-ns-and-add-source-ns
+I0607 16:50:02.079843  162559 request.go:655] Throttling request took 1.050167771s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/policy/v1?timeout=32s
+    logger.go:42: 16:50:05 | 1-083_validate_apps_in_any_namespace/5-create-ns-and-add-source-ns | Namespace:/test-1-24-custom created
+    logger.go:42: 16:50:06 | 1-083_validate_apps_in_any_namespace/5-create-ns-and-add-source-ns | ArgoCD:openshift-gitops/openshift-gitops updated
+    logger.go:42: 17:02:07 | 1-083_validate_apps_in_any_namespace/5-create-ns-and-add-source-ns | test step failed 5-create-ns-and-add-source-ns
+    case.go:361: failed in step 5-create-ns-and-add-source-ns
+    case.go:363: --- Namespace:/test-1-24-custom
+        +++ Namespace:/test-1-24-custom
+        @@ -1,8 +1,61 @@
+         apiVersion: v1
+         kind: Namespace
+         metadata:
+        +  annotations:
+        +    openshift.io/sa.scc.mcs: s0:c32,c4
+        +    openshift.io/sa.scc.supplemental-groups: 1001000000/10000
+        +    openshift.io/sa.scc.uid-range: 1001000000/10000
+        +    operator.tekton.dev/prune.hash: e12cf88878007ab90299fa28c92d42daf72a1dda6ff604ea40c1f1da0f1f5e1d
+           labels:
+        -    argocd.argoproj.io/managed-by-cluster-argocd: openshift-gitops
+             kubernetes.io/metadata.name: test-1-24-custom
+        +    openshift-pipelines.tekton.dev/namespace-reconcile-version: 1.10.3
+        +    pod-security.kubernetes.io/audit: baseline
+        +    pod-security.kubernetes.io/audit-version: v1.24
+        +    pod-security.kubernetes.io/warn: baseline
+        +    pod-security.kubernetes.io/warn-version: v1.24
+        +  managedFields:
+        +  - apiVersion: v1
+        +    fieldsType: FieldsV1
+        +    fieldsV1:
+        +      f:metadata:
+        +        f:labels:
+        +          .: {}
+        +          f:kubernetes.io/metadata.name: {}
+        +    manager: kubectl-kuttl
+        +    operation: Update
+        +    time: "2023-06-07T11:20:05Z"
+        +  - apiVersion: v1
+        +    fieldsType: FieldsV1
+        +    fieldsV1:
+        +      f:metadata:
+        +        f:annotations:
+        +          .: {}
+        +          f:openshift.io/sa.scc.mcs: {}
+        +          f:openshift.io/sa.scc.supplemental-groups: {}
+        +          f:openshift.io/sa.scc.uid-range: {}
+        +        f:labels:
+        +          f:pod-security.kubernetes.io/audit: {}
+        +          f:pod-security.kubernetes.io/audit-version: {}
+        +          f:pod-security.kubernetes.io/warn: {}
+        +          f:pod-security.kubernetes.io/warn-version: {}
+        +    manager: cluster-policy-controller
+        +    operation: Update
+        +    time: "2023-06-07T11:20:06Z"
+        +  - apiVersion: v1
+        +    fieldsType: FieldsV1
+        +    fieldsV1:
+        +      f:metadata:
+        +        f:annotations:
+        +          f:operator.tekton.dev/prune.hash: {}
+        +        f:labels:
+        +          f:openshift-pipelines.tekton.dev/namespace-reconcile-version: {}
+        +    manager: openshift-pipelines-operator
+        +    operation: Update
+        +    time: "2023-06-07T11:20:06Z"
+           name: test-1-24-custom
+        +spec:
+        +  finalizers:
+        +  - kubernetes
+        +status:
+        +  phase: Active
+         
+        
+    case.go:363: resource Namespace:/test-1-24-custom: .metadata.labels.argocd.argoproj.io/managed-by-cluster-argocd: key is missing from map
+    case.go:363: roles.rbac.authorization.k8s.io "openshift-gitops_test-1-24-custom" not found
+    case.go:363: rolebindings.rbac.authorization.k8s.io "openshift-gitops_test-1-24-custom" not found
+    logger.go:42: 17:02:07 | 1-083_validate_apps_in_any_namespace | skipping kubernetes event logging
+    logger.go:42: 17:02:12 | 1-083_validate_apps_in_any_namespace | Deleting namespace: kuttl-test-gorgeous-quetzal
+=== CONT  kuttl/harness/1-078_validate_default_argocd_consoleLink
+    logger.go:42: 17:02:12 | 1-078_validate_default_argocd_consoleLink | Creating namespace: kuttl-test-organic-meerkat
+    logger.go:42: 17:02:12 | 1-078_validate_default_argocd_consoleLink/1- | starting test step 1-
+I0607 17:02:14.809429  162559 request.go:655] Throttling request took 1.049963158s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/performance.openshift.io/v2?timeout=32s
+    logger.go:42: 17:14:18 | 1-078_validate_default_argocd_consoleLink/1- | test step failed 1-
+    case.go:361: failed in step 1-
+    case.go:363: argocds.argoproj.io "openshift-gitops" not found
+    case.go:363: consolelinks.console.openshift.io "argocd" not found
+    logger.go:42: 17:14:18 | 1-078_validate_default_argocd_consoleLink | skipping kubernetes event logging
+    logger.go:42: 17:14:18 | 1-078_validate_default_argocd_consoleLink | Deleting namespace: kuttl-test-organic-meerkat
+=== CONT  kuttl/harness/1-077_validate_workload_status_monitoring_alert
+2023/06/07 17:14:18 object detected with no GVK Kind for path /home/skatyal/gitops-operator/test/openshift/e2e/sequential/1-077_validate_workload_status_monitoring_alert/01-assert.yaml
+2023/06/07 17:14:18 object detected with no GVK Kind for path /home/skatyal/gitops-operator/test/openshift/e2e/sequential/1-077_validate_workload_status_monitoring_alert/01-install.yaml
+2023/06/07 17:14:18 object detected with no GVK Kind for path /home/skatyal/gitops-operator/test/openshift/e2e/sequential/1-077_validate_workload_status_monitoring_alert/02-verify-alert.yaml
+    logger.go:42: 17:14:18 | 1-077_validate_workload_status_monitoring_alert | Creating namespace: kuttl-test-merry-albacore
+    logger.go:42: 17:14:18 | 1-077_validate_workload_status_monitoring_alert/1-install | starting test step 1-install
+I0607 17:14:21.002254  162559 request.go:655] Throttling request took 1.049724869s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/pxc.percona.com/v1-8-0?timeout=32s
+    logger.go:42: 17:14:24 | 1-077_validate_workload_status_monitoring_alert/1-install | test step completed 1-install
+    logger.go:42: 17:14:24 | 1-077_validate_workload_status_monitoring_alert/2-verify-alert | starting test step 2-verify-alert
+    logger.go:42: 17:14:28 | 1-077_validate_workload_status_monitoring_alert/2-verify-alert | test step completed 2-verify-alert
+    logger.go:42: 17:14:28 | 1-077_validate_workload_status_monitoring_alert | skipping kubernetes event logging
+    logger.go:42: 17:14:28 | 1-077_validate_workload_status_monitoring_alert | Deleting namespace: kuttl-test-merry-albacore
+=== CONT  kuttl/harness/1-076_validate_single_deprecation_notice
+    logger.go:42: 17:14:29 | 1-076_validate_single_deprecation_notice | Creating namespace: kuttl-test-cheerful-heron
+    logger.go:42: 17:14:29 | 1-076_validate_single_deprecation_notice/1-install | starting test step 1-install
+I0607 17:14:31.024638  162559 request.go:655] Throttling request took 1.150310446s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/cloud.network.openshift.io/v1?timeout=32s
+    logger.go:42: 17:14:34 | 1-076_validate_single_deprecation_notice/1-install | Namespace:/test-1-076-custom created
+    logger.go:42: 17:14:35 | 1-076_validate_single_deprecation_notice/1-install | Namespace:/test-1-076-custom2 created
+    logger.go:42: 17:14:36 | 1-076_validate_single_deprecation_notice/1-install | ArgoCD:test-1-076-custom/argocd created
+    logger.go:42: 17:14:36 | 1-076_validate_single_deprecation_notice/1-install | ArgoCD:test-1-076-custom2/argocd created
+    logger.go:42: 17:26:38 | 1-076_validate_single_deprecation_notice/1-install | test step failed 1-install
+    case.go:361: failed in step 1-install
+    case.go:363: argocds.argoproj.io "openshift-gitops" not found
+    logger.go:42: 17:26:38 | 1-076_validate_single_deprecation_notice | skipping kubernetes event logging
+    logger.go:42: 17:26:40 | 1-076_validate_single_deprecation_notice | Deleting namespace: kuttl-test-cheerful-heron
+=== CONT  kuttl/harness/1-064_validate_tcp_reset_error
+    logger.go:42: 17:26:40 | 1-064_validate_tcp_reset_error | Creating namespace: kuttl-test-innocent-bison
+    logger.go:42: 17:26:40 | 1-064_validate_tcp_reset_error/1- | starting test step 1-
+I0607 17:26:42.430114  162559 request.go:655] Throttling request took 1.000574104s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/performance.openshift.io/v1alpha1?timeout=32s
+    logger.go:42: 17:38:45 | 1-064_validate_tcp_reset_error/1- | test step failed 1-
+    case.go:361: failed in step 1-
+    case.go:363: argocds.argoproj.io "openshift-gitops" not found
+    logger.go:42: 17:38:45 | 1-064_validate_tcp_reset_error | skipping kubernetes event logging
+    logger.go:42: 17:38:45 | 1-064_validate_tcp_reset_error | Deleting namespace: kuttl-test-innocent-bison
+=== CONT  kuttl/harness/1-056_validate_managed-by
+    logger.go:42: 17:38:46 | 1-056_validate_managed-by | Creating namespace: kuttl-test-exotic-amoeba
+    logger.go:42: 17:38:46 | 1-056_validate_managed-by/1-install | starting test step 1-install
+I0607 17:38:48.340485  162559 request.go:655] Throttling request took 1.050183775s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/apiserver.openshift.io/v1?timeout=32s
+    logger.go:42: 17:38:52 | 1-056_validate_managed-by/1-install | Namespace:/test-1-56-target created
+    logger.go:42: 17:38:53 | 1-056_validate_managed-by/1-install | Namespace:/test-1-56-custom created
+    logger.go:42: 17:38:53 | 1-056_validate_managed-by/1-install | ArgoCD:test-1-56-target/example-argocd created
+    logger.go:42: 17:39:07 | 1-056_validate_managed-by/1-install | test step completed 1-install
+    logger.go:42: 17:39:07 | 1-056_validate_managed-by/2-delete | starting test step 2-delete
+I0607 17:39:09.700554  162559 request.go:655] Throttling request took 1.050005965s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/resolution.tekton.dev/v1beta1?timeout=32s
+    logger.go:42: 17:39:12 | 1-056_validate_managed-by/2-delete | test step completed 2-delete
+    logger.go:42: 17:39:12 | 1-056_validate_managed-by/3-check | starting test step 3-check
+    logger.go:42: 17:39:12 | 1-056_validate_managed-by/3-check | running command: [sh -c set -e
+        label_value=$(oc get ns/test-1-56-custom -o go-template=$'{{index .metadata.labels "argocd.argoproj.io/managed-by"}}')
+        
+        echo "label value: ${label_value}"
+        
+        if [[ "${label_value}" == "test-1-56-target" ]]; then
+          echo "managed-by label exists, set REMOVE_MANAGED_BY_LABEL_ON_ARGOCD_DELETION variable to delete the label"
+          exit 0
+        fi
+        exit 1
+        ]
+    logger.go:42: 17:39:15 | 1-056_validate_managed-by/3-check | label value: test-1-56-target
+    logger.go:42: 17:39:15 | 1-056_validate_managed-by/3-check | managed-by label exists, set REMOVE_MANAGED_BY_LABEL_ON_ARGOCD_DELETION variable to delete the label
+I0607 17:39:19.716292  162559 request.go:655] Throttling request took 3.793770895s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/samples.operator.openshift.io/v1?timeout=32s
+    logger.go:42: 17:39:20 | 1-056_validate_managed-by/3-check | test step completed 3-check
+    logger.go:42: 17:39:20 | 1-056_validate_managed-by/4-add_env | starting test step 4-add_env
+    logger.go:42: 17:39:20 | 1-056_validate_managed-by/4-add_env | running command: [sh -c set -e
+        
+        if ! [ -z $NON_OLM ]; then       
+            oc patch deployment gitops-operator-controller-manager -n gitops-operator-system \
+              -p '{"spec":{"template":{"spec":{"containers":[{"name":"manager","env":[{"name":"REMOVE_MANAGED_BY_LABEL_ON_ARGOCD_DELETION","value":"true"}]}]}}}}'     
+        
+        elif [ -z $CI ]; then 
+        
+          oc patch -n openshift-operators subscription openshift-gitops-operator \
+            --type merge --patch '{"spec": {"config": {"env": [{"name": "REMOVE_MANAGED_BY_LABEL_ON_ARGOCD_DELETION", "value": "true"}]}}}'
+        
+        else
+        
+          oc patch -n openshift-operators subscription `subscription=gitops-operator- && oc get subscription --all-namespaces | grep $subscription | head -1 | awk '{print $2}'` \
+            --type merge --patch '{"spec": {"config": {"env": [{"name": "REMOVE_MANAGED_BY_LABEL_ON_ARGOCD_DELETION", "value": "true"}]}}}'
+        fi
+        ]
+    logger.go:42: 17:39:21 | 1-056_validate_managed-by/4-add_env | deployment.apps/gitops-operator-controller-manager patched
+    logger.go:42: 17:39:26 | 1-056_validate_managed-by/4-add_env | test step completed 4-add_env
+    logger.go:42: 17:39:26 | 1-056_validate_managed-by/5-check | starting test step 5-check
+    logger.go:42: 17:39:26 | 1-056_validate_managed-by/5-check | running command: [sh -c if ! [ -z $NON_OLM ]; then
+          label_value="true"
+          if [ -z $label_value ]; then
+            echo "REMOVE_MANAGED_BY_LABEL_ON_ARGOCD_DELETION not set"
+            exit 1
+          else
+            exit 0
+          fi
+        elif [ -z $CI ]; then
+          label_value=$(oc get  subscriptions openshift-gitops-operator -n openshift-operators -o json | jq '.spec.config.env[]|select(.name=="REMOVE_MANAGED_BY_LABEL_ON_ARGOCD_DELETION").value')
+          if [ -z $label_value ]; then
+            echo "REMOVE_MANAGED_BY_LABEL_ON_ARGOCD_DELETION not set"
+            exit 1
+          else
+            exit 0
+          fi
+        else
+          label_value=$(oc get subscription `subscription=gitops-operator- && oc get subscription --all-namespaces | grep $subscription | head -1 | awk '{print $2}'` -n openshift-operators -o json | jq '.spec.config.env[]|select(.name=="REMOVE_MANAGED_BY_LABEL_ON_ARGOCD_DELETION").value')
+          if [ -z $label_value ]; then
+            echo "REMOVE_MANAGED_BY_LABEL_ON_ARGOCD_DELETION not set"
+            exit 1
+          else
+            exit 0
+          fi
+        fi
+        ]
+I0607 17:39:29.740862  162559 request.go:655] Throttling request took 2.650046065s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/postgresql.k8s.enterprisedb.io/v1?timeout=32s
+    logger.go:42: 17:39:31 | 1-056_validate_managed-by/5-check | test step completed 5-check
+    logger.go:42: 17:39:31 | 1-056_validate_managed-by/6-install | starting test step 6-install
+    logger.go:42: 17:39:36 | 1-056_validate_managed-by/6-install | Namespace:/test-1-56-target-2 created
+    logger.go:42: 17:39:37 | 1-056_validate_managed-by/6-install | Namespace:/test-1-56-custom-2 created
+    logger.go:42: 17:39:38 | 1-056_validate_managed-by/6-install | ArgoCD:test-1-56-target-2/example-argocd-2 created
+    logger.go:42: 17:40:02 | 1-056_validate_managed-by/6-install | test step completed 6-install
+    logger.go:42: 17:40:02 | 1-056_validate_managed-by/7-delete | starting test step 7-delete
+I0607 17:40:04.989974  162559 request.go:655] Throttling request took 1.000357139s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/policy/v1?timeout=32s
+    logger.go:42: 17:40:08 | 1-056_validate_managed-by/7-delete | test step completed 7-delete
+    logger.go:42: 17:40:08 | 1-056_validate_managed-by/8-remove_env | starting test step 8-remove_env
+    logger.go:42: 17:40:08 | 1-056_validate_managed-by/8-remove_env | running command: [sh -c if ! [ -z $NON_OLM ]; then       
+            oc patch deployment gitops-operator-controller-manager -n gitops-operator-system \
+              -p '{"spec":{"template":{"spec":{"containers":[{"name":"manager","env":[{"name":"REMOVE_MANAGED_BY_LABEL_ON_ARGOCD_DELETION","value":null}]}]}}}}'    
+        elif [ -z $CI ]; then
+          oc patch -n openshift-operators subscription openshift-gitops-operator \
+            --type json --patch '[{"op": "remove", "path": "/spec/config"}]'
+        else
+          oc patch -n openshift-operators subscription `subscription=gitops-operator- && oc get subscription --all-namespaces | grep $subscription | head -1 | awk '{print $2}'` \
+            --type json --patch '[{"op": "remove", "path": "/spec/config"}]'
+        fi
+        ]
+    logger.go:42: 17:40:10 | 1-056_validate_managed-by/8-remove_env | deployment.apps/gitops-operator-controller-manager patched
+    logger.go:42: 17:40:14 | 1-056_validate_managed-by/8-remove_env | test step completed 8-remove_env
+    logger.go:42: 17:40:14 | 1-056_validate_managed-by/99-delete | starting test step 99-delete
+I0607 17:40:26.092460  162559 request.go:655] Throttling request took 1.049592639s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/console.openshift.io/v1alpha1?timeout=32s
+    logger.go:42: 17:40:29 | 1-056_validate_managed-by/99-delete | test step completed 99-delete
+    logger.go:42: 17:40:29 | 1-056_validate_managed-by | skipping kubernetes event logging
+    logger.go:42: 17:40:29 | 1-056_validate_managed-by | Deleting namespace: kuttl-test-exotic-amoeba
+=== CONT  kuttl/harness/1-050_validate_sso_config
+    logger.go:42: 17:40:29 | 1-050_validate_sso_config | Creating namespace: kuttl-test-choice-hippo
+    logger.go:42: 17:40:29 | 1-050_validate_sso_config/1-install | starting test step 1-install
+    logger.go:42: 17:40:35 | 1-050_validate_sso_config/1-install | ArgoCD:kuttl-test-choice-hippo/argocd created
+    logger.go:42: 17:40:49 | 1-050_validate_sso_config/1-install | test step completed 1-install
+    logger.go:42: 17:40:49 | 1-050_validate_sso_config/2-remove-spec-sso | starting test step 2-remove-spec-sso
+    logger.go:42: 17:40:49 | 1-050_validate_sso_config/2-remove-spec-sso | running command: [sh -c oc patch -n $NAMESPACE argocd/argocd --type='json' -p='[{"op": "remove", "path": "/spec/sso"}]'
+        ]
+    logger.go:42: 17:40:50 | 1-050_validate_sso_config/2-remove-spec-sso | argocd.argoproj.io/argocd patched
+    logger.go:42: 17:40:50 | 1-050_validate_sso_config/2-remove-spec-sso | running command: [sh -c sleep 10]
+I0607 17:41:02.764794  162559 request.go:655] Throttling request took 1.049962655s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/operators.coreos.com/v2?timeout=32s
+    logger.go:42: 17:41:09 | 1-050_validate_sso_config/2-remove-spec-sso | test step completed 2-remove-spec-sso
+    logger.go:42: 17:41:09 | 1-050_validate_sso_config/3-add-spec-dex | starting test step 3-add-spec-dex
+I0607 17:41:12.797671  162559 request.go:655] Throttling request took 2.699598506s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/flowcontrol.apiserver.k8s.io/v1beta1?timeout=32s
+    logger.go:42: 17:41:15 | 1-050_validate_sso_config/3-add-spec-dex | ArgoCD:kuttl-test-choice-hippo/argocd updated
+    logger.go:42: 17:41:21 | 1-050_validate_sso_config/3-add-spec-dex | test step completed 3-add-spec-dex
+    logger.go:42: 17:41:21 | 1-050_validate_sso_config/4-disable-dex-through-sub | starting test step 4-disable-dex-through-sub
+    logger.go:42: 17:41:21 | 1-050_validate_sso_config/4-disable-dex-through-sub | running command: [sh -c if ! [ -z $NON_OLM ]; then 
+          oc patch deployment gitops-operator-controller-manager -n gitops-operator-system \
+            -p '{"spec":{"template":{"spec":{"containers":[{"name":"manager","env":[{"name":"DISABLE_DEX","value":"true"}]}]}}}}'
+        
+        elif [ -z $CI ]; then 
+        
+          oc patch -n openshift-operators subscription openshift-gitops-operator \
+            --type merge --patch '{"spec": {"config": {"env": [{"name": "DISABLE_DEX", "value": "true"}]}}}'
+        else
+        
+          oc patch -n openshift-operators subscription `subscription=gitops-operator- && oc get subscription --all-namespaces | grep $subscription | head -1 | awk '{print $2}'` \
+            --type merge --patch '{"spec": {"config": {"env": [{"name": "DISABLE_DEX", "value": "true"}]}}}'      
+        fi
+        ]
+    logger.go:42: 17:41:22 | 1-050_validate_sso_config/4-disable-dex-through-sub | deployment.apps/gitops-operator-controller-manager patched
+    logger.go:42: 17:41:22 | 1-050_validate_sso_config/4-disable-dex-through-sub | running command: [sh -c sleep 30]
+I0607 17:41:54.666897  162559 request.go:655] Throttling request took 1.046646774s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/metrics.k8s.io/v1beta1?timeout=32s
+    logger.go:42: 17:42:01 | 1-050_validate_sso_config/4-disable-dex-through-sub | test step completed 4-disable-dex-through-sub
+    logger.go:42: 17:42:01 | 1-050_validate_sso_config/5-unset-disable-dex-env-var | starting test step 5-unset-disable-dex-env-var
+    logger.go:42: 17:42:01 | 1-050_validate_sso_config/5-unset-disable-dex-env-var | running command: [sh -c if ! [ -z $NON_OLM ]; then 
+          oc patch deployment gitops-operator-controller-manager -n gitops-operator-system \
+            -p '{"spec":{"template":{"spec":{"containers":[{"name":"manager","env":[{"name":"DISABLE_DEX","value":""}]}]}}}}'
+        
+        elif [ -z $CI ]; then 
+        
+          oc patch -n openshift-operators subscription openshift-gitops-operator \
+            --type merge --patch '{"spec": {"config": {"env": [{"name": "DISABLE_DEX", "value": ""}]}}}'
+        else
+        
+          oc patch -n openshift-operators subscription `subscription=gitops-operator- && oc get subscription --all-namespaces | grep $subscription | head -1 | awk '{print $2}'` \
+            --type merge --patch '{"spec": {"config": {"env": [{"name": "DISABLE_DEX", "value": ""}]}}}'
+        fi
+        ]
+    logger.go:42: 17:42:02 | 1-050_validate_sso_config/5-unset-disable-dex-env-var | deployment.apps/gitops-operator-controller-manager patched
+    logger.go:42: 17:42:02 | 1-050_validate_sso_config/5-unset-disable-dex-env-var | running command: [sh -c sleep 30]
+I0607 17:42:34.811135  162559 request.go:655] Throttling request took 1.046093825s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/monitoring.coreos.com/v1alpha1?timeout=32s
+    logger.go:42: 17:42:41 | 1-050_validate_sso_config/5-unset-disable-dex-env-var | test step completed 5-unset-disable-dex-env-var
+    logger.go:42: 17:42:41 | 1-050_validate_sso_config/6-remove-spec-dex | starting test step 6-remove-spec-dex
+    logger.go:42: 17:42:41 | 1-050_validate_sso_config/6-remove-spec-dex | running command: [sh -c oc patch -n $NAMESPACE argocd/argocd --type='json' -p='[{"op": "remove", "path": "/spec/dex"}]'
+        ]
+    logger.go:42: 17:42:42 | 1-050_validate_sso_config/6-remove-spec-dex | argocd.argoproj.io/argocd patched
+    logger.go:42: 17:42:42 | 1-050_validate_sso_config/6-remove-spec-dex | running command: [sh -c sleep 10]
+I0607 17:42:54.446915  162559 request.go:655] Throttling request took 1.000187851s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/packages.operators.coreos.com/v1?timeout=32s
+    logger.go:42: 17:43:00 | 1-050_validate_sso_config/6-remove-spec-dex | test step completed 6-remove-spec-dex
+    logger.go:42: 17:43:00 | 1-050_validate_sso_config/7-provider-keycloak-dex-spec | starting test step 7-provider-keycloak-dex-spec
+I0607 17:43:04.455501  162559 request.go:655] Throttling request took 3.248698336s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/postgres-operator.crunchydata.com/v1beta1?timeout=32s
+    logger.go:42: 17:43:06 | 1-050_validate_sso_config/7-provider-keycloak-dex-spec | ArgoCD:kuttl-test-choice-hippo/argocd updated
+    logger.go:42: 17:43:07 | 1-050_validate_sso_config/7-provider-keycloak-dex-spec | test step completed 7-provider-keycloak-dex-spec
+    logger.go:42: 17:43:07 | 1-050_validate_sso_config/8-remove-spec-dex | starting test step 8-remove-spec-dex
+    logger.go:42: 17:43:07 | 1-050_validate_sso_config/8-remove-spec-dex | running command: [sh -c oc patch -n $NAMESPACE argocd/argocd --type='json' -p='[{"op": "remove", "path": "/spec/dex"}]'
+        ]
+    logger.go:42: 17:43:09 | 1-050_validate_sso_config/8-remove-spec-dex | argocd.argoproj.io/argocd patched
+    logger.go:42: 17:43:14 | 1-050_validate_sso_config/8-remove-spec-dex | test step completed 8-remove-spec-dex
+    logger.go:42: 17:43:14 | 1-050_validate_sso_config | skipping kubernetes event logging
+    logger.go:42: 17:43:14 | 1-050_validate_sso_config | Deleting namespace: kuttl-test-choice-hippo
+=== CONT  kuttl/harness/1-042_validate_status_host
+    logger.go:42: 17:43:14 | 1-042_validate_status_host | Creating namespace: kuttl-test-huge-mayfly
+    logger.go:42: 17:43:14 | 1-042_validate_status_host/1-install | starting test step 1-install
+I0607 17:43:16.440089  162559 request.go:655] Throttling request took 1.000150338s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/apps/v1?timeout=32s
+    logger.go:42: 17:43:20 | 1-042_validate_status_host/1-install | ArgoCD:kuttl-test-huge-mayfly/example-argocd created
+    logger.go:42: 17:43:23 | 1-042_validate_status_host/1-install | test step completed 1-install
+    logger.go:42: 17:43:23 | 1-042_validate_status_host/2-check_URL | starting test step 2-check_URL
+    logger.go:42: 17:43:23 | 1-042_validate_status_host/2-check_URL | running command: [sh -c route_URL=$(oc get routes -o jsonpath="{.items[*]['spec.host']}" --field-selector metadata.name=example-argocd-server -n $NAMESPACE)
+        status_URL=$(oc get argocd -o jsonpath="{.items[*]['status.host']}" -n $NAMESPACE)
+        
+        if ! [[ "${status_URL}" == "${route_URL}" ]]; then
+          echo "Error: Route does not match"
+          exit 1
+        fi
+        exit 0
+        ]
+I0607 17:43:26.727668  162559 request.go:655] Throttling request took 1.048985412s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/machine.openshift.io/v1beta1?timeout=32s
+    logger.go:42: 17:43:29 | 1-042_validate_status_host/2-check_URL | test step completed 2-check_URL
+    logger.go:42: 17:43:29 | 1-042_validate_status_host/3-modify_route_URL | starting test step 3-modify_route_URL
+    logger.go:42: 17:43:29 | 1-042_validate_status_host/3-modify_route_URL | running command: [sh -c route_URL=$(oc get routes -o jsonpath="{.items[*]['spec.host']}" --field-selector metadata.name=example-argocd-server -n $NAMESPACE)
+        oc patch route example-argocd-server -n $NAMESPACE --type='json' -p='[{"op": "replace", "path": "/spec/host", "value":"modified"}]'
+        
+        sleep 5
+        
+        status_URL=$(oc get argocd -o jsonpath="{.items[*]['status.host']}" -n $NAMESPACE)
+        
+        if ! [[ "${status_URL}" == "modified" ]]; then
+          echo "status.host value should be "modified""
+          exit 1
+        fi
+        exit 0
+        ]
+    logger.go:42: 17:43:31 | 1-042_validate_status_host/3-modify_route_URL | route.route.openshift.io/example-argocd-server patched
+I0607 17:43:39.734289  162559 request.go:655] Throttling request took 1.045398702s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/psmdb.percona.com/v1-12-0?timeout=32s
+    logger.go:42: 17:43:43 | 1-042_validate_status_host/3-modify_route_URL | test step completed 3-modify_route_URL
+    logger.go:42: 17:43:43 | 1-042_validate_status_host/4-disable_route | starting test step 4-disable_route
+    logger.go:42: 17:43:52 | 1-042_validate_status_host/4-disable_route | ArgoCD:kuttl-test-huge-mayfly/example-argocd updated
+    logger.go:42: 17:43:52 | 1-042_validate_status_host/4-disable_route | test step completed 4-disable_route
+    logger.go:42: 17:43:52 | 1-042_validate_status_host/5-check_URL_gone | starting test step 5-check_URL_gone
+    logger.go:42: 17:43:52 | 1-042_validate_status_host/5-check_URL_gone | running command: [sh -c sleep 5
+        status_URL=$(oc get argocd -o jsonpath="{.items[*]['status.host']}" -n $NAMESPACE)
+        
+        echo "${status_URL}"
+        
+        if test "${status_URL}" != ""; then
+          echo "Error: status.host should not be present in argocd"
+          exit 1
+        fi
+        exit 0
+        ]
+    logger.go:42: 17:43:58 | 1-042_validate_status_host/5-check_URL_gone | 
+I0607 17:44:00.367905  162559 request.go:655] Throttling request took 1.000386161s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/authorization.openshift.io/v1?timeout=32s
+    logger.go:42: 17:44:03 | 1-042_validate_status_host/5-check_URL_gone | test step completed 5-check_URL_gone
+    logger.go:42: 17:44:03 | 1-042_validate_status_host | skipping kubernetes event logging
+    logger.go:42: 17:44:03 | 1-042_validate_status_host | Deleting namespace: kuttl-test-huge-mayfly
+=== CONT  kuttl/harness/1-041_validate_argocd_sync_alert
+    logger.go:42: 17:44:03 | 1-041_validate_argocd_sync_alert | Creating namespace: kuttl-test-busy-shepherd
+    logger.go:42: 17:44:04 | 1-041_validate_argocd_sync_alert/1- | starting test step 1-
+    logger.go:42: 17:44:09 | 1-041_validate_argocd_sync_alert/1- | test step completed 1-
+    logger.go:42: 17:44:09 | 1-041_validate_argocd_sync_alert | skipping kubernetes event logging
+    logger.go:42: 17:44:09 | 1-041_validate_argocd_sync_alert | Deleting namespace: kuttl-test-busy-shepherd
+=== CONT  kuttl/harness/1-040_validate_quoted_RBAC_group_names
+    logger.go:42: 17:44:09 | 1-040_validate_quoted_RBAC_group_names | Creating namespace: kuttl-test-sweeping-oriole
+    logger.go:42: 17:44:09 | 1-040_validate_quoted_RBAC_group_names/1-login_argocd_api_server | starting test step 1-login_argocd_api_server
+    logger.go:42: 17:44:09 | 1-040_validate_quoted_RBAC_group_names/1-login_argocd_api_server | running command: [sh -c api_server=$(oc get routes -n openshift-gitops --field-selector metadata.name=openshift-gitops-server -o jsonpath="{.items[*]['spec.host']}")
+        password=$(oc get secret openshift-gitops-cluster -n openshift-gitops -o jsonpath='{.data.admin\.password}' | base64 -d)
+        
+        output=$(argocd login $api_server --username admin --password $password --insecure)
+        
+        if ! [[ "${output}" =~ "'admin:login' logged in successfully" ]]; then
+          exit 1
+        fi
+        exit 0
+        ]
+I0607 17:44:18.238038  162559 request.go:655] Throttling request took 1.000466113s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/machine.openshift.io/v1?timeout=32s
+    logger.go:42: 17:44:21 | 1-040_validate_quoted_RBAC_group_names/1-login_argocd_api_server | test step completed 1-login_argocd_api_server
+    logger.go:42: 17:44:21 | 1-040_validate_quoted_RBAC_group_names/2-create_role | starting test step 2-create_role
+    logger.go:42: 17:44:21 | 1-040_validate_quoted_RBAC_group_names/2-create_role | running command: [sh -c output=$(argocd proj role create default somerole)
+        
+        if ! [[ "$output" =~ "Role 'somerole' created" ]]; then
+            echo "Error creating role"
+            exit 1
+        fi
+        exit 0
+        ]
+I0607 17:44:28.253752  162559 request.go:655] Throttling request took 3.898583781s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/operator.openshift.io/v1?timeout=32s
+    logger.go:42: 17:44:28 | 1-040_validate_quoted_RBAC_group_names/2-create_role | test step completed 2-create_role
+    logger.go:42: 17:44:28 | 1-040_validate_quoted_RBAC_group_names/3-specify_group_names | starting test step 3-specify_group_names
+    logger.go:42: 17:44:28 | 1-040_validate_quoted_RBAC_group_names/3-specify_group_names | running command: [sh -c output=$(argocd proj role add-group default somerole '"CN=foo,OU=bar,O=baz"')
+        
+        cleanup() {
+            argocd proj role delete default somerole
+        }
+        trap cleanup INT TERM EXIT
+        
+        if ! [[ "${output}" =~ "added to role 'somerole'" ]]; then
+          echo "Contains comma characters!"
+          exit 1
+        fi
+        ]
+    logger.go:42: 17:44:32 | 1-040_validate_quoted_RBAC_group_names/3-specify_group_names | Role 'somerole' deleted
+    logger.go:42: 17:44:37 | 1-040_validate_quoted_RBAC_group_names/3-specify_group_names | test step completed 3-specify_group_names
+    logger.go:42: 17:44:37 | 1-040_validate_quoted_RBAC_group_names | skipping kubernetes event logging
+    logger.go:42: 17:44:37 | 1-040_validate_quoted_RBAC_group_names | Deleting namespace: kuttl-test-sweeping-oriole
+=== CONT  kuttl/harness/1-035_validate_argocd_secret_repopulate
+    logger.go:42: 17:44:38 | 1-035_validate_argocd_secret_repopulate | Creating namespace: kuttl-test-eager-goshawk
+    logger.go:42: 17:44:38 | 1-035_validate_argocd_secret_repopulate/1- | starting test step 1-
+I0607 17:44:40.009216  162559 request.go:655] Throttling request took 1.000436634s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/autoscaling.openshift.io/v1?timeout=32s
+    logger.go:42: 17:44:43 | 1-035_validate_argocd_secret_repopulate/1- | test step completed 1-
+    logger.go:42: 17:44:43 | 1-035_validate_argocd_secret_repopulate/2-remove_secret_data | starting test step 2-remove_secret_data
+    logger.go:42: 17:44:43 | 1-035_validate_argocd_secret_repopulate/2-remove_secret_data | running command: [sh -c oc patch secret/argocd-secret -p '{"data":null}' -n openshift-gitops
+        ]
+    logger.go:42: 17:44:44 | 1-035_validate_argocd_secret_repopulate/2-remove_secret_data | secret/argocd-secret patched
+    logger.go:42: 17:44:49 | 1-035_validate_argocd_secret_repopulate/2-remove_secret_data | test step completed 2-remove_secret_data
+    logger.go:42: 17:44:49 | 1-035_validate_argocd_secret_repopulate/3-check_secret_repopulate | starting test step 3-check_secret_repopulate
+    logger.go:42: 17:44:49 | 1-035_validate_argocd_secret_repopulate/3-check_secret_repopulate | running command: [sh -c sleep 30
+        secret_data=$(oc get secret/argocd-secret -n openshift-gitops -o custom-columns=SECRET:.data --no-headers)
+        
+        if test "${secret_data}" = "<none>"; then
+          echo "argocd-secret was not repopulated"
+          exit 1
+        fi
+        exit 0
+        ]
+I0607 17:45:22.811036  162559 request.go:655] Throttling request took 1.000336911s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/machineconfiguration.openshift.io/v1?timeout=32s
+    logger.go:42: 17:45:25 | 1-035_validate_argocd_secret_repopulate/3-check_secret_repopulate | test step completed 3-check_secret_repopulate
+    logger.go:42: 17:45:25 | 1-035_validate_argocd_secret_repopulate/4-check_controller_pod_status | starting test step 4-check_controller_pod_status
+    logger.go:42: 17:45:25 | 1-035_validate_argocd_secret_repopulate/4-check_controller_pod_status | running command: [sh -c oc rollout status deployment gitops-operator-controller-manager -n openshift-operators --timeout=1m
+        rollout_status=$?
+        if [ "${rollout_status}" -ne 0 ]; then
+          echo "gitops-operator-controller-manager deployment was not successfully rolled out"
+          exit 1
+        fi
+        exit 0
+        ]
+    logger.go:42: 17:45:27 | 1-035_validate_argocd_secret_repopulate/4-check_controller_pod_status | Error from server (NotFound): deployments.apps "gitops-operator-controller-manager" not found
+    logger.go:42: 17:45:27 | 1-035_validate_argocd_secret_repopulate/4-check_controller_pod_status | gitops-operator-controller-manager deployment was not successfully rolled out
+    case.go:361: failed in step 4-check_controller_pod_status
+    case.go:363: exit status 1
+    logger.go:42: 17:45:32 | 1-035_validate_argocd_secret_repopulate | skipping kubernetes event logging
+    logger.go:42: 17:45:32 | 1-035_validate_argocd_secret_repopulate | Deleting namespace: kuttl-test-eager-goshawk
+=== CONT  kuttl/harness/1-034_validate_custom_roles
+    logger.go:42: 17:45:32 | 1-034_validate_custom_roles | Creating namespace: kuttl-test-popular-meerkat
+    logger.go:42: 17:45:33 | 1-034_validate_custom_roles/1-install | starting test step 1-install
+I0607 17:45:34.738104  162559 request.go:655] Throttling request took 1.049174126s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/pxc.percona.com/v1?timeout=32s
+    logger.go:42: 17:45:38 | 1-034_validate_custom_roles/1-install | Namespace:/test-1-034-custom created
+    logger.go:42: 17:45:39 | 1-034_validate_custom_roles/1-install | ArgoCD:test-1-034-custom/argocd created
+    logger.go:42: 17:45:40 | 1-034_validate_custom_roles/1-install | Namespace:/custom-role-namespace created
+    logger.go:42: 17:45:41 | 1-034_validate_custom_roles/1-install | ClusterRole:/custom-argocd-role created
+    logger.go:42: 17:45:43 | 1-034_validate_custom_roles/1-install | test step completed 1-install
+    logger.go:42: 17:45:43 | 1-034_validate_custom_roles/2-patch-subscription | starting test step 2-patch-subscription
+    logger.go:42: 17:45:43 | 1-034_validate_custom_roles/2-patch-subscription | running command: [sh -c 
+        if ! [ -z $NON_OLM ]; then       
+            oc patch deployment gitops-operator-controller-manager -n gitops-operator-system \
+              -p '{"spec":{"template":{"spec":{"containers":[{"name":"manager","env":[{"name":"CONTROLLER_CLUSTER_ROLE","value":"custom-argocd-role"},{"name":"SERVER_CLUSTER_ROLE", "value":"custom-argocd-role"}]}]}}}}'
+         
+        elif ! [ -z $CI ]; then    
+          
+          oc patch -n openshift-operators subscription $sub \
+            --type merge --patch '{"spec": {"config": {"env": [{"name": "CONTROLLER_CLUSTER_ROLE", "value": "custom-argocd-role"},{"name": "SERVER_CLUSTER_ROLE", "value": "custom-argocd-role"}]}}}'
+        
+        else
+        
+          oc patch -n openshift-operators subscription openshift-gitops-operator \
+            --type merge --patch '{"spec": {"config": {"env": [{"name": "CONTROLLER_CLUSTER_ROLE", "value": "custom-argocd-role"},{"name": "SERVER_CLUSTER_ROLE", "value": "custom-argocd-role"}]}}}'
+        
+        fi
+        ]
+    logger.go:42: 17:45:45 | 1-034_validate_custom_roles/2-patch-subscription | deployment.apps/gitops-operator-controller-manager patched
+    logger.go:42: 17:45:45 | 1-034_validate_custom_roles/2-patch-subscription | running command: [sh -c sleep 10]
+I0607 17:45:56.951827  162559 request.go:655] Throttling request took 1.050147858s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/metal3.io/v1alpha1?timeout=32s
+    logger.go:42: 17:46:00 | 1-034_validate_custom_roles/2-patch-subscription | test step completed 2-patch-subscription
+    logger.go:42: 17:46:00 | 1-034_validate_custom_roles/3- | starting test step 3-
+    logger.go:42: 17:46:16 | 1-034_validate_custom_roles/3- | test step completed 3-
+    logger.go:42: 17:46:16 | 1-034_validate_custom_roles/4- | starting test step 4-
+I0607 17:46:18.046371  162559 request.go:655] Throttling request took 1.049079646s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/metal3.io/v1alpha1?timeout=32s
+    logger.go:42: 17:46:22 | 1-034_validate_custom_roles/4- | test step completed 4-
+    logger.go:42: 17:46:22 | 1-034_validate_custom_roles/5-delete | starting test step 5-delete
+I0607 17:46:34.327775  162559 request.go:655] Throttling request took 1.050513993s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/monitoring.coreos.com/v1alpha1?timeout=32s
+    logger.go:42: 17:46:37 | 1-034_validate_custom_roles/5-delete | test step completed 5-delete
+    logger.go:42: 17:46:37 | 1-034_validate_custom_roles/6-revert-patch | starting test step 6-revert-patch
+    logger.go:42: 17:46:37 | 1-034_validate_custom_roles/6-revert-patch | running command: [sh -c if ! [ -z $NON_OLM ]; then       
+            oc patch deployment gitops-operator-controller-manager -n gitops-operator-system \
+              -p '{"spec":{"template":{"spec":{"containers":[{"name":"manager","env":[{"name":"CONTROLLER_CLUSTER_ROLE","value":null},{"name":"SERVER_CLUSTER_ROLE", "value":null}]}]}}}}'
+         
+        elif ! [ -z $CI ]; then 
+            oc patch -n openshift-operators subscription `subscription=gitops-operator- && oc get subscription --all-namespaces | grep $subscription | head -1 | awk '{print $2}'` --type json --patch='[ { "op": "remove", "path": "/spec/config" } ]'
+        else
+            oc patch subscription/openshift-gitops-operator -n openshift-operators --type json --patch='[ { "op": "remove", "path": "/spec/config" } ]'
+        fi
+        ]
+    logger.go:42: 17:46:39 | 1-034_validate_custom_roles/6-revert-patch | deployment.apps/gitops-operator-controller-manager patched
+    logger.go:42: 17:46:39 | 1-034_validate_custom_roles/6-revert-patch | running command: [sh -c sleep 10]
+I0607 17:46:51.019259  162559 request.go:655] Throttling request took 1.050132963s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/monitoring.coreos.com/v1beta1?timeout=32s
+    logger.go:42: 17:46:54 | 1-034_validate_custom_roles/6-revert-patch | test step completed 6-revert-patch
+    logger.go:42: 17:46:54 | 1-034_validate_custom_roles | skipping kubernetes event logging
+    logger.go:42: 17:46:54 | 1-034_validate_custom_roles | Deleting namespace: kuttl-test-popular-meerkat
+=== CONT  kuttl/harness/1-031_validate_toolchain
+    logger.go:42: 17:46:54 | 1-031_validate_toolchain | Creating namespace: kuttl-test-flying-meerkat
+    logger.go:42: 17:46:54 | 1-031_validate_toolchain/1-check | starting test step 1-check
+    logger.go:42: 17:46:54 | 1-031_validate_toolchain/1-check | running command: [sh -c set -e
+        set -o pipefail
+        
+        # These variables need to be maintained according to the component matrix: https://spaces.redhat.com/display/GITOPS/GitOps+Component+Matrix
+        expected_kustomizeVersion='kustomize/v4.5.7'
+        expected_helmVersion='v3.10.0'
+        expected_argocdVersion='v2.6.1'
+        expected_dexVersion='v2.35.1'
+        expected_redisVersion='6'
+        
+        gitops_server_pod=$(oc get -n openshift-gitops pods \
+          -o custom-columns=NAME:.metadata.name --no-headers | \
+          grep openshift-gitops-server | \
+          head -1
+        )
+        dex_pod=$(oc get -n openshift-gitops pods \
+          -o custom-columns=NAME:.metadata.name --no-headers | \
+          grep openshift-gitops-dex-server | \
+          head -1
+        )
+        redis_pod=$(oc get -n openshift-gitops pods \
+          -o custom-columns=NAME:.metadata.name --no-headers | \
+          grep openshift-gitops-redis | \
+          head -1
+        )
+        route=$(oc get route -n openshift-gitops \
+          -o custom-columns=NAME:.spec.host --no-headers | \
+          grep openshift-gitops-server | \
+          head -1
+        )
+        
+        kustomizeVersion=$(oc -n openshift-gitops exec $gitops_server_pod \
+          -- kustomize version | \
+          awk -F':' '{ print $2 }' | \
+          awk '{ print $1 }'
+        )
+        helmVersion=$(oc -n openshift-gitops exec $gitops_server_pod \
+          -- helm version | \
+          sed -e 's/version.BuildInfo//' -e 's/\"//g' | \
+          awk -F':' '{ print $2 }' | \
+          awk -F',' '{ print $1 }'
+        )
+        argocdVersion=$(oc -n openshift-gitops exec $gitops_server_pod -- \
+          argocd version --short --server $route --insecure | \
+          grep 'argocd-server' | \
+          sed -e 's/\+unknown//' | \
+          awk -F' ' '{ print $2 }'
+        )
+        dexVersion=$(oc -n openshift-gitops exec $dex_pod -- dex version 2>&1 | \
+          grep '^Dex Version' | \
+          awk -F': ' '{ print $2 }'
+        )
+        
+        redisVersion=$(oc -n openshift-gitops exec $redis_pod -- \
+          redis-server -v | awk -F '=' '{ print $2 }' | cut -d'.' -f 1
+        )
+        
+        if test "${kustomizeVersion}" != "${expected_kustomizeVersion}"; then
+          echo "Kustomize version mismatch. Should be ${expected_kustomizeVersion}, is ${kustomizeVersion}"
+          exit 1
+        fi
+        
+        # Commenting the below tests. Refer https://issues.redhat.com/browse/GITOPS-2641 
+        
+        # if test "${helmVersion}" != "${expected_helmVersion}"; then
+        #   echo "Helm version mismatch. Should be ${expected_helmVersion}, is ${helmVersion}"
+        #   exit 1
+        # fi
+        # if test "${argocdVersion}" != "${expected_argocdVersion}"; then
+        #   echo "ArgoCD version mismatch. Should be ${expected_argocdVersion}, is ${argocdVersion}"
+        #   exit 1
+        # fi
+        # if test "${dexVersion}" != "${expected_dexVersion}"; then
+        #   echo "Dex version mismatch. Should be ${expected_dexVersion}, is ${dexVersion}"
+        #   exit 1
+        # fi
+        
+        if test "${redisVersion}" != "${expected_redisVersion}"; then
+          echo "Redis version mismatch. Should be ${expected_redisVersion}, is ${redisVersion}"
+          exit 1
+        fi
+        ]
+    logger.go:42: 17:47:14 | 1-031_validate_toolchain/1-check | Kustomize version mismatch. Should be kustomize/v4.5.7, is v4.4.1
+I0607 17:47:16.926291  162559 request.go:655] Throttling request took 1.0489354s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/resolution.tekton.dev/v1alpha1?timeout=32s
+    case.go:361: failed in step 1-check
+    case.go:363: exit status 1
+    logger.go:42: 17:47:20 | 1-031_validate_toolchain | skipping kubernetes event logging
+    logger.go:42: 17:47:20 | 1-031_validate_toolchain | Deleting namespace: kuttl-test-flying-meerkat
+=== CONT  kuttl/harness/1-028_validate_run_on_infra
+    logger.go:42: 17:47:20 | 1-028_validate_run_on_infra | Ignoring errors.yaml as it does not match file name regexp: ^(\d+)-(?:[^\.]+)(?:\.yaml)?$
+    logger.go:42: 17:47:20 | 1-028_validate_run_on_infra | Creating namespace: kuttl-test-unbiased-mammoth
+    logger.go:42: 17:47:20 | 1-028_validate_run_on_infra/1-install | starting test step 1-install
+    logger.go:42: 17:47:20 | 1-028_validate_run_on_infra/1-install | running command: [sh -c oc patch gitopsservice cluster --type=merge --patch='{"spec": {"runOnInfra": true, "tolerations": [{"effect": "NoSchedule", "key": "infra", "value": "reserved"}]}}'
+        ]
+    logger.go:42: 17:47:22 | 1-028_validate_run_on_infra/1-install | gitopsservice.pipelines.openshift.io/cluster patched
+    logger.go:42: 17:47:28 | 1-028_validate_run_on_infra/1-install | test step completed 1-install
+    logger.go:42: 17:47:28 | 1-028_validate_run_on_infra/2-custom-argocd | starting test step 2-custom-argocd
+I0607 17:47:30.383692  162559 request.go:655] Throttling request took 1.04970113s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/operator.openshift.io/v1?timeout=32s
+    logger.go:42: 17:47:34 | 1-028_validate_run_on_infra/2-custom-argocd | ArgoCD:kuttl-test-unbiased-mammoth/argocd created
+    logger.go:42: 17:47:37 | 1-028_validate_run_on_infra/2-custom-argocd | test step completed 2-custom-argocd
+    logger.go:42: 17:47:37 | 1-028_validate_run_on_infra/3-change-back | starting test step 3-change-back
+    logger.go:42: 17:47:37 | 1-028_validate_run_on_infra/3-change-back | running command: [sh -c oc patch gitopsservice cluster --type=json --patch='[{"op": "remove", "path": "/spec/tolerations"}, {"op": "remove", "path": "/spec/runOnInfra"}]'
+        oc patch statefulset openshift-gitops-application-controller -n openshift-gitops -p '{"spec":{"replicas":0}}'
+        ]
+    logger.go:42: 17:47:39 | 1-028_validate_run_on_infra/3-change-back | gitopsservice.pipelines.openshift.io/cluster patched
+    logger.go:42: 17:47:40 | 1-028_validate_run_on_infra/3-change-back | statefulset.apps/openshift-gitops-application-controller patched
+I0607 17:47:42.174820  162559 request.go:655] Throttling request took 1.0508783s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/k8s.cni.cncf.io/v1?timeout=32s
+    logger.go:42: 17:47:45 | 1-028_validate_run_on_infra/3-change-back | test step completed 3-change-back
+    logger.go:42: 17:47:45 | 1-028_validate_run_on_infra/4-check | starting test step 4-check
+    logger.go:42: 17:47:51 | 1-028_validate_run_on_infra/4-check | test step completed 4-check
+    logger.go:42: 17:47:51 | 1-028_validate_run_on_infra | skipping kubernetes event logging
+    logger.go:42: 17:47:51 | 1-028_validate_run_on_infra | Deleting namespace: kuttl-test-unbiased-mammoth
+=== CONT  kuttl/harness/1-027_validate_operand_from_git
+    logger.go:42: 17:47:52 | 1-027_validate_operand_from_git | Creating namespace: kuttl-test-relaxed-anemone
+    logger.go:42: 17:47:52 | 1-027_validate_operand_from_git/1- | starting test step 1-
+I0607 17:47:53.997789  162559 request.go:655] Throttling request took 1.050145586s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/argoproj.io/v1alpha1?timeout=32s
+    logger.go:42: 17:47:57 | 1-027_validate_operand_from_git/1- | test step completed 1-
+    logger.go:42: 17:47:57 | 1-027_validate_operand_from_git/2-install | starting test step 2-install
+    logger.go:42: 17:48:02 | 1-027_validate_operand_from_git/2-install | Application:openshift-gitops/1-27-argocd created
+    logger.go:42: 17:48:21 | 1-027_validate_operand_from_git/2-install | test step completed 2-install
+    logger.go:42: 17:48:21 | 1-027_validate_operand_from_git/3-create-app | starting test step 3-create-app
+I0607 17:48:22.668873  162559 request.go:655] Throttling request took 1.049171425s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/flowcontrol.apiserver.k8s.io/v1beta1?timeout=32s
+    logger.go:42: 17:48:26 | 1-027_validate_operand_from_git/3-create-app | Application:test-1-27-custom/guestbook created
+    logger.go:42: 17:48:55 | 1-027_validate_operand_from_git/3-create-app | test step completed 3-create-app
+    logger.go:42: 17:48:55 | 1-027_validate_operand_from_git/99-delete | starting test step 99-delete
+I0607 17:49:11.260610  162559 request.go:655] Throttling request took 1.000414285s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/ingress.operator.openshift.io/v1?timeout=32s
+    logger.go:42: 17:49:14 | 1-027_validate_operand_from_git/99-delete | test step completed 99-delete
+    logger.go:42: 17:49:14 | 1-027_validate_operand_from_git | skipping kubernetes event logging
+    logger.go:42: 17:49:14 | 1-027_validate_operand_from_git | Deleting namespace: kuttl-test-relaxed-anemone
+=== CONT  kuttl/harness/1-026-validate_backend_service_permissions
+    logger.go:42: 17:49:14 | 1-026-validate_backend_service_permissions | Creating namespace: kuttl-test-polite-hamster
+    logger.go:42: 17:49:14 | 1-026-validate_backend_service_permissions/1-check-backend-service | starting test step 1-check-backend-service
+    logger.go:42: 17:49:21 | 1-026-validate_backend_service_permissions/1-check-backend-service | test step completed 1-check-backend-service
+    logger.go:42: 17:49:21 | 1-026-validate_backend_service_permissions | skipping kubernetes event logging
+    logger.go:42: 17:49:21 | 1-026-validate_backend_service_permissions | Deleting namespace: kuttl-test-polite-hamster
+=== CONT  kuttl/harness/1-018_validate_disable_default_instance
+    logger.go:42: 17:49:21 | 1-018_validate_disable_default_instance | Ignoring errors.yaml as it does not match file name regexp: ^(\d+)-(?:[^\.]+)(?:\.yaml)?$
+    logger.go:42: 17:49:21 | 1-018_validate_disable_default_instance | Creating namespace: kuttl-test-pleasing-lynx
+    logger.go:42: 17:49:22 | 1-018_validate_disable_default_instance/1- | starting test step 1-
+I0607 17:49:23.637053  162559 request.go:655] Throttling request took 1.048518569s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/monitoring.coreos.com/v1beta1?timeout=32s
+    logger.go:42: 17:49:27 | 1-018_validate_disable_default_instance/1- | test step completed 1-
+    logger.go:42: 17:49:27 | 1-018_validate_disable_default_instance/2-patch-subscription | starting test step 2-patch-subscription
+    logger.go:42: 17:49:27 | 1-018_validate_disable_default_instance/2-patch-subscription | running command: [sh -c if ! [ -z $NON_OLM ]; then
+          oc patch deployment gitops-operator-controller-manager -n gitops-operator-system \
+            -p '{"spec":{"template":{"spec":{"containers":[{"name":"manager","env":[{"name":"DISABLE_DEFAULT_ARGOCD_INSTANCE","value":"true"}]}]}}}}'
+        
+        elif [ -z $CI ]; then 
+        
+          oc patch -n openshift-operators subscription openshift-gitops-operator \
+            --type merge --patch '{"spec": {"config": {"env": [{"name": "DISABLE_DEFAULT_ARGOCD_INSTANCE", "value": "true"}]}}}'
+        
+        else
+        
+          oc patch -n openshift-operators subscription `subscription=gitops-operator- && oc get subscription --all-namespaces | grep $subscription | head -1 | awk '{print $2}'` \
+            --type merge --patch '{"spec": {"config": {"env": [{"name": "DISABLE_DEFAULT_ARGOCD_INSTANCE", "value": "true"}]}}}'
+        fi
+        ]
+    logger.go:42: 17:49:30 | 1-018_validate_disable_default_instance/2-patch-subscription | deployment.apps/gitops-operator-controller-manager patched
+    logger.go:42: 17:49:30 | 1-018_validate_disable_default_instance/2-patch-subscription | running command: [sh -c sleep 20]
+I0607 17:49:51.962103  162559 request.go:655] Throttling request took 1.048078113s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/pxc.percona.com/v1-6-0?timeout=32s
+    logger.go:42: 17:49:55 | 1-018_validate_disable_default_instance/2-patch-subscription | test step completed 2-patch-subscription
+    logger.go:42: 17:49:55 | 1-018_validate_disable_default_instance/3-check | starting test step 3-check
+    logger.go:42: 17:50:00 | 1-018_validate_disable_default_instance/3-check | test step completed 3-check
+    logger.go:42: 17:50:00 | 1-018_validate_disable_default_instance/4-patch-subscription | starting test step 4-patch-subscription
+    logger.go:42: 17:50:00 | 1-018_validate_disable_default_instance/4-patch-subscription | running command: [sh -c if ! [ -z $NON_OLM ]; then
+          oc patch deployment gitops-operator-controller-manager -n gitops-operator-system \
+            -p '{"spec":{"template":{"spec":{"containers":[{"name":"manager","env":[{"name":"DISABLE_DEFAULT_ARGOCD_INSTANCE","value":null}]}]}}}}'
+        
+        elif [ -z $CI ]; then 
+        
+          oc patch -n openshift-operators subscription openshift-gitops-operator \
+            --type json --patch '[{"op": "remove", "path": "/spec/config"}]'
+        else
+        
+          oc patch -n openshift-operators subscription `subscription=gitops-operator- && oc get subscription --all-namespaces | grep $subscription | head -1 | awk '{print $2}'` \
+            --type json --patch '[{"op": "remove", "path": "/spec/config"}]'
+        fi
+        ]
+    logger.go:42: 17:50:02 | 1-018_validate_disable_default_instance/4-patch-subscription | deployment.apps/gitops-operator-controller-manager patched
+I0607 17:50:03.994733  162559 request.go:655] Throttling request took 1.000441128s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/triggers.tekton.dev/v1beta1?timeout=32s
+    logger.go:42: 17:50:39 | 1-018_validate_disable_default_instance/4-patch-subscription | test step completed 4-patch-subscription
+    logger.go:42: 17:50:39 | 1-018_validate_disable_default_instance | skipping kubernetes event logging
+    logger.go:42: 17:50:39 | 1-018_validate_disable_default_instance | Deleting namespace: kuttl-test-pleasing-lynx
+=== CONT  kuttl/harness/1-010_validate-ootb-manage-other-namespace
+    logger.go:42: 17:50:40 | 1-010_validate-ootb-manage-other-namespace | Ignoring README.md as it does not match file name regexp: ^(\d+)-(?:[^\.]+)(?:\.yaml)?$
+    logger.go:42: 17:50:40 | 1-010_validate-ootb-manage-other-namespace | Ignoring errors.yaml as it does not match file name regexp: ^(\d+)-(?:[^\.]+)(?:\.yaml)?$
+    logger.go:42: 17:50:40 | 1-010_validate-ootb-manage-other-namespace | Creating namespace: kuttl-test-helpful-marmot
+    logger.go:42: 17:50:40 | 1-010_validate-ootb-manage-other-namespace/1-install | starting test step 1-install
+I0607 17:50:42.138603  162559 request.go:655] Throttling request took 1.049305257s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/security.internal.openshift.io/v1?timeout=32s
+    logger.go:42: 17:50:46 | 1-010_validate-ootb-manage-other-namespace/1-install | Namespace:/test-1-10-custom created
+    logger.go:42: 17:50:46 | 1-010_validate-ootb-manage-other-namespace/1-install | test step completed 1-install
+    logger.go:42: 17:50:46 | 1-010_validate-ootb-manage-other-namespace/2- | starting test step 2-
+    logger.go:42: 17:50:52 | 1-010_validate-ootb-manage-other-namespace/2- | test step completed 2-
+    logger.go:42: 17:50:52 | 1-010_validate-ootb-manage-other-namespace/3-create-application | starting test step 3-create-application
+I0607 17:50:53.769758  162559 request.go:655] Throttling request took 1.000281596s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/flowcontrol.apiserver.k8s.io/v1beta1?timeout=32s
+    logger.go:42: 17:50:57 | 1-010_validate-ootb-manage-other-namespace/3-create-application | Application:openshift-gitops/test-1-10-custom created
+    logger.go:42: 17:51:09 | 1-010_validate-ootb-manage-other-namespace/3-create-application | test step completed 3-create-application
+    logger.go:42: 17:51:09 | 1-010_validate-ootb-manage-other-namespace/4-unlabel-namespace | starting test step 4-unlabel-namespace
+    logger.go:42: 17:51:09 | 1-010_validate-ootb-manage-other-namespace/4-unlabel-namespace | running command: [sh -c kubectl label ns test-1-10-custom argocd.argoproj.io/managed-by-]
+    logger.go:42: 17:51:10 | 1-010_validate-ootb-manage-other-namespace/4-unlabel-namespace | namespace/test-1-10-custom unlabeled
+    logger.go:42: 17:51:10 | 1-010_validate-ootb-manage-other-namespace/4-unlabel-namespace | running command: [sh -c sleep 5]
+I0607 17:51:17.666982  162559 request.go:655] Throttling request took 1.000135845s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/security.openshift.io/v1?timeout=32s
+    logger.go:42: 17:51:20 | 1-010_validate-ootb-manage-other-namespace/4-unlabel-namespace | test step completed 4-unlabel-namespace
+    logger.go:42: 17:51:20 | 1-010_validate-ootb-manage-other-namespace/5-check-rbac | starting test step 5-check-rbac
+    logger.go:42: 17:51:26 | 1-010_validate-ootb-manage-other-namespace/5-check-rbac | test step completed 5-check-rbac
+    logger.go:42: 17:51:26 | 1-010_validate-ootb-manage-other-namespace/99-delete | starting test step 99-delete
+I0607 17:51:35.795698  162559 request.go:655] Throttling request took 1.049670351s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/performance.openshift.io/v2?timeout=32s
+    logger.go:42: 17:51:38 | 1-010_validate-ootb-manage-other-namespace/99-delete | test step completed 99-delete
+    logger.go:42: 17:51:38 | 1-010_validate-ootb-manage-other-namespace | skipping kubernetes event logging
+    logger.go:42: 17:51:38 | 1-010_validate-ootb-manage-other-namespace | Deleting namespace: kuttl-test-helpful-marmot
+=== CONT  kuttl/harness/1-008_validate-4.9CI-Failures
+    logger.go:42: 17:51:39 | 1-008_validate-4.9CI-Failures | Creating namespace: kuttl-test-eminent-doberman
+    logger.go:42: 17:51:39 | 1-008_validate-4.9CI-Failures/1-install | starting test step 1-install
+    logger.go:42: 17:51:45 | 1-008_validate-4.9CI-Failures/1-install | Namespace:/source-ns created
+    logger.go:42: 17:51:45 | 1-008_validate-4.9CI-Failures/1-install | ArgoCD:source-ns/argocd created
+    logger.go:42: 17:51:46 | 1-008_validate-4.9CI-Failures/1-install | Namespace:/target-ns created
+    logger.go:42: 17:51:53 | 1-008_validate-4.9CI-Failures/1-install | test step completed 1-install
+    logger.go:42: 17:51:53 | 1-008_validate-4.9CI-Failures/2-create-rbac | starting test step 2-create-rbac
+I0607 17:51:55.049852  162559 request.go:655] Throttling request took 1.050951219s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/pxc.percona.com/v1-5-0?timeout=32s
+    logger.go:42: 17:51:58 | 1-008_validate-4.9CI-Failures/2-create-rbac | Role:source-ns/source-ns-openshift-gitops-argocd-application-controller created
+    logger.go:42: 17:51:59 | 1-008_validate-4.9CI-Failures/2-create-rbac | RoleBinding:source-ns/source-ns-openshift-gitops-argocd-application-controller created
+    logger.go:42: 17:51:59 | 1-008_validate-4.9CI-Failures/2-create-rbac | test step completed 2-create-rbac
+    logger.go:42: 17:51:59 | 1-008_validate-4.9CI-Failures/3-create-app | starting test step 3-create-app
+    logger.go:42: 17:52:04 | 1-008_validate-4.9CI-Failures/3-create-app | Application:source-ns/nginx created
+    logger.go:42: 17:52:14 | 1-008_validate-4.9CI-Failures/3-create-app | test step completed 3-create-app
+    logger.go:42: 17:52:14 | 1-008_validate-4.9CI-Failures | skipping kubernetes event logging
+    logger.go:42: 17:52:14 | 1-008_validate-4.9CI-Failures | Deleting namespace: kuttl-test-eminent-doberman
+=== CONT  kuttl/harness/1-006_validate_machine_config
+    logger.go:42: 17:52:15 | 1-006_validate_machine_config | Creating namespace: kuttl-test-robust-pika
+    logger.go:42: 17:52:15 | 1-006_validate_machine_config/1-install | starting test step 1-install
+I0607 17:52:17.266797  162559 request.go:655] Throttling request took 1.046920538s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/security.internal.openshift.io/v1?timeout=32s
+    logger.go:42: 17:52:20 | 1-006_validate_machine_config/1-install | ArgoCD:openshift-gitops/openshift-gitops updated
+    logger.go:42: 17:52:35 | 1-006_validate_machine_config/1-install | test step completed 1-install
+    logger.go:42: 17:52:35 | 1-006_validate_machine_config/2-install | starting test step 2-install
+I0607 17:52:37.235602  162559 request.go:655] Throttling request took 1.04707505s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/helm.openshift.io/v1beta1?timeout=32s
+    logger.go:42: 17:52:40 | 1-006_validate_machine_config/2-install | Application:openshift-gitops/validate-machine-config created
+    logger.go:42: 17:52:42 | 1-006_validate_machine_config/2-install | test step completed 2-install
+    logger.go:42: 17:52:42 | 1-006_validate_machine_config/3-install | starting test step 3-install
+    logger.go:42: 17:52:47 | 1-006_validate_machine_config/3-install | ArgoCD:openshift-gitops/openshift-gitops updated
+    logger.go:42: 17:52:48 | 1-006_validate_machine_config/3-install | test step completed 3-install
+    logger.go:42: 17:52:48 | 1-006_validate_machine_config/99-delete | starting test step 99-delete
+I0607 17:52:50.353758  162559 request.go:655] Throttling request took 1.0001508s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/metal3.io/v1alpha1?timeout=32s
+    logger.go:42: 17:52:53 | 1-006_validate_machine_config/99-delete | test step completed 99-delete
+    logger.go:42: 17:52:53 | 1-006_validate_machine_config | skipping kubernetes event logging
+    logger.go:42: 17:52:53 | 1-006_validate_machine_config | Deleting namespace: kuttl-test-robust-pika
+=== CONT  kuttl/harness/1-005_validate_metrics
+    logger.go:42: 17:52:53 | 1-005_validate_metrics | Creating namespace: kuttl-test-mighty-heron
+    logger.go:42: 17:52:54 | 1-005_validate_metrics/1- | starting test step 1-
+    logger.go:42: 17:52:59 | 1-005_validate_metrics/1- | test step completed 1-
+    logger.go:42: 17:52:59 | 1-005_validate_metrics | skipping kubernetes event logging
+    logger.go:42: 17:52:59 | 1-005_validate_metrics | Deleting namespace: kuttl-test-mighty-heron
+=== CONT  kuttl/harness/1-004_validate_argocd_installation
+    logger.go:42: 17:53:00 | 1-004_validate_argocd_installation | Creating namespace: kuttl-test-whole-mako
+    logger.go:42: 17:53:00 | 1-004_validate_argocd_installation/1-check-prereqs | starting test step 1-check-prereqs
+I0607 17:53:02.069102  162559 request.go:655] Throttling request took 1.000071766s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/redis.redis.opstreelabs.in/v1beta1?timeout=32s
+    logger.go:42: 17:53:05 | 1-004_validate_argocd_installation/1-check-prereqs | test step completed 1-check-prereqs
+    logger.go:42: 17:53:05 | 1-004_validate_argocd_installation/2-change-operand | starting test step 2-change-operand
+    logger.go:42: 17:53:10 | 1-004_validate_argocd_installation/2-change-operand | ArgoCD:openshift-gitops/openshift-gitops updated
+    logger.go:42: 17:53:10 | 1-004_validate_argocd_installation/2-change-operand | test step completed 2-change-operand
+    logger.go:42: 17:53:10 | 1-004_validate_argocd_installation/3-wait | starting test step 3-wait
+    logger.go:42: 17:53:10 | 1-004_validate_argocd_installation/3-wait | running command: [sh -c sleep 5]
+I0607 17:53:17.748985  162559 request.go:655] Throttling request took 1.000297201s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/monitoring.coreos.com/v1alpha1?timeout=32s
+    logger.go:42: 17:53:20 | 1-004_validate_argocd_installation/3-wait | test step completed 3-wait
+    logger.go:42: 17:53:20 | 1-004_validate_argocd_installation/4- | starting test step 4-
+    logger.go:42: 17:53:25 | 1-004_validate_argocd_installation/4- | test step completed 4-
+    logger.go:42: 17:53:25 | 1-004_validate_argocd_installation | skipping kubernetes event logging
+    logger.go:42: 17:53:25 | 1-004_validate_argocd_installation | Deleting namespace: kuttl-test-whole-mako
+=== CONT  kuttl/harness/1-002_validate_backend_service
+    logger.go:42: 17:53:26 | 1-002_validate_backend_service | Creating namespace: kuttl-test-capital-sailfish
+    logger.go:42: 17:53:26 | 1-002_validate_backend_service/1-check-backend-service | starting test step 1-check-backend-service
+I0607 17:53:27.925782  162559 request.go:655] Throttling request took 1.047885158s, request: GET:https://api.rhoms-4.12-060704.dev.openshiftappsvc.org:6443/apis/admissionregistration.k8s.io/v1?timeout=32s
+    logger.go:42: 17:53:32 | 1-002_validate_backend_service/1-check-backend-service | test step completed 1-check-backend-service
+    logger.go:42: 17:53:32 | 1-002_validate_backend_service | skipping kubernetes event logging
+    logger.go:42: 17:53:32 | 1-002_validate_backend_service | Deleting namespace: kuttl-test-capital-sailfish
+=== CONT  kuttl
+    harness.go:399: run tests finished
+    harness.go:508: cleaning up
+    harness.go:563: removing temp folder: ""
+--- FAIL: kuttl (5389.48s)
+    --- FAIL: kuttl/harness (0.00s)
+        --- PASS: kuttl/harness/1-001_validate_kam_service (22.84s)
+        --- FAIL: kuttl/harness/1-087_validate_rollout_policyrules (730.23s)
+        --- FAIL: kuttl/harness/1-086_validate_rollouts_resources_creation (728.79s)
+        --- FAIL: kuttl/harness/1-085_validate_dynamic_plugin_installation (19.47s)
+        --- PASS: kuttl/harness/1-084_validate_prune_templates (19.54s)
+        --- FAIL: kuttl/harness/1-083_validate_apps_in_any_namespace (773.23s)
+        --- FAIL: kuttl/harness/1-078_validate_default_argocd_consoleLink (726.23s)
+        --- PASS: kuttl/harness/1-077_validate_workload_status_monitoring_alert (10.42s)
+        --- FAIL: kuttl/harness/1-076_validate_single_deprecation_notice (731.58s)
+        --- FAIL: kuttl/harness/1-064_validate_tcp_reset_error (725.51s)
+        --- PASS: kuttl/harness/1-056_validate_managed-by (103.32s)
+        --- PASS: kuttl/harness/1-050_validate_sso_config (165.17s)
+        --- PASS: kuttl/harness/1-042_validate_status_host (49.15s)
+        --- PASS: kuttl/harness/1-041_validate_argocd_sync_alert (5.94s)
+        --- PASS: kuttl/harness/1-040_validate_quoted_RBAC_group_names (28.48s)
+        --- FAIL: kuttl/harness/1-035_validate_argocd_secret_repopulate (54.61s)
+        --- PASS: kuttl/harness/1-034_validate_custom_roles (81.61s)
+        --- FAIL: kuttl/harness/1-031_validate_toolchain (25.84s)
+        --- PASS: kuttl/harness/1-028_validate_run_on_infra (31.77s)
+        --- PASS: kuttl/harness/1-027_validate_operand_from_git (82.60s)
+        --- PASS: kuttl/harness/1-026-validate_backend_service_permissions (7.22s)
+        --- PASS: kuttl/harness/1-018_validate_disable_default_instance (78.32s)
+        --- PASS: kuttl/harness/1-010_validate-ootb-manage-other-namespace (58.98s)
+        --- PASS: kuttl/harness/1-008_validate-4.9CI-Failures (36.08s)
+        --- PASS: kuttl/harness/1-006_validate_machine_config (38.50s)
+        --- PASS: kuttl/harness/1-005_validate_metrics (6.64s)
+        --- PASS: kuttl/harness/1-004_validate_argocd_installation (25.69s)
+        --- PASS: kuttl/harness/1-002_validate_backend_service (6.45s)
+FAIL

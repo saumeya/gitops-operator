@@ -1,0 +1,65 @@
+{
+   "name": "",
+   "tests": 7,
+   "failures": 0,
+   "time": "708.010",
+   "testsuite": [
+     {
+       "tests": 7,
+       "failures": 0,
+       "timestamp": "2023-06-12T12:34:30.336264846+05:30",
+       "time": "280.678",
+       "name": "/home/skatyal/gitops-operator/scripts/../test/openshift/e2e/sequential",
+       "testcase": [
+         {
+           "classname": "sequential",
+           "name": "1-001_validate_kam_service",
+           "timestamp": "2023-06-12T12:34:30.344470711+05:30",
+           "time": "21.801",
+           "assertions": 4
+         },
+         {
+           "classname": "sequential",
+           "name": "1-041_validate_argocd_sync_alert",
+           "timestamp": "2023-06-12T12:34:52.148774063+05:30",
+           "time": "5.517",
+           "assertions": 2
+         },
+         {
+           "classname": "sequential",
+           "name": "1-087_validate_rollout_policyrules",
+           "timestamp": "2023-06-12T12:34:57.671871625+05:30",
+           "time": "7.123",
+           "assertions": 1
+         },
+         {
+           "classname": "sequential",
+           "name": "1-086_validate_rollouts_resources_creation",
+           "timestamp": "2023-06-12T12:35:04.799051709+05:30",
+           "time": "28.657",
+           "assertions": 10
+         },
+         {
+           "classname": "sequential",
+           "name": "1-085_validate_dynamic_plugin_installation",
+           "timestamp": "2023-06-12T12:35:33.456820376+05:30",
+           "time": "29.857",
+           "assertions": 8
+         },
+         {
+           "classname": "sequential",
+           "name": "1-084_validate_prune_templates",
+           "timestamp": "2023-06-12T12:36:03.319496049+05:30",
+           "time": "18.500"
+         },
+         {
+           "classname": "sequential",
+           "name": "1-083_validate_apps_in_any_namespace",
+           "timestamp": "2023-06-12T12:36:21.830804197+05:30",
+           "time": "169.183",
+           "assertions": 68
+         }
+       ]
+     }
+   ]
+ }

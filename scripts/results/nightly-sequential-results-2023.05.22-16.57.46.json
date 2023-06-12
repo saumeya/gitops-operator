@@ -1,0 +1,86 @@
+{
+   "name": "",
+   "tests": 10,
+   "failures": 0,
+   "time": "1281.575",
+   "testsuite": [
+     {
+       "tests": 10,
+       "failures": 0,
+       "timestamp": "2023-05-22T16:57:59.246014922+05:30",
+       "time": "578.216",
+       "name": "/home/skatyal/gitops-operator/scripts/../test/openshift/e2e/nightly/sequential",
+       "testcase": [
+         {
+           "classname": "sequential",
+           "name": "1-001_validate_kam_service",
+           "timestamp": "2023-05-22T16:57:59.25184018+05:30",
+           "time": "18.966",
+           "assertions": 4
+         },
+         {
+           "classname": "sequential",
+           "name": "1-083_validate_apps_in_any_namespace",
+           "timestamp": "2023-05-22T16:58:18.244078644+05:30",
+           "time": "118.696",
+           "assertions": 68
+         },
+         {
+           "classname": "sequential",
+           "name": "1-085_validate_dynamic_plugin_installation",
+           "timestamp": "2023-05-22T17:00:16.941119869+05:30",
+           "time": "6.730"
+         },
+         {
+           "classname": "sequential",
+           "name": "1-084_validate_prune_templates",
+           "timestamp": "2023-05-22T17:00:23.676540751+05:30",
+           "time": "75.158",
+           "assertions": 7
+         },
+         {
+           "classname": "sequential",
+           "name": "1-034_validate_custom_roles",
+           "timestamp": "2023-05-22T17:01:38.842163381+05:30",
+           "time": "80.079",
+           "assertions": 15
+         },
+         {
+           "classname": "sequential",
+           "name": "1-078_validate_default_argocd_consoleLink",
+           "timestamp": "2023-05-22T17:02:58.926717576+05:30",
+           "time": "71.482",
+           "assertions": 4
+         },
+         {
+           "classname": "sequential",
+           "name": "1-076_validate_single_deprecation_notice",
+           "timestamp": "2023-05-22T17:04:10.414395879+05:30",
+           "time": "66.841",
+           "assertions": 8
+         },
+         {
+           "classname": "sequential",
+           "name": "1-071_validate_node_selectors",
+           "timestamp": "2023-05-22T17:05:17.262899955+05:30",
+           "time": "25.574",
+           "assertions": 28
+         },
+         {
+           "classname": "sequential",
+           "name": "1-064_validate_tcp_reset_error",
+           "timestamp": "2023-05-22T17:05:42.840946526+05:30",
+           "time": "16.889",
+           "assertions": 1
+         },
+         {
+           "classname": "sequential",
+           "name": "1-056_validate_managed-by",
+           "timestamp": "2023-05-22T17:05:59.737334354+05:30",
+           "time": "97.724",
+           "assertions": 15
+         }
+       ]
+     }
+   ]
+ }

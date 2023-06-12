@@ -1,0 +1,6 @@
+2023/06/08 15:38:10 kutt-test config testdirs is overridden with args: [ /home/skatyal/gitops-operator/scripts/../test/openshift/e2e/sequential ]
+=== RUN   kuttl
+    harness.go:457: starting setup
+    harness.go:248: running tests using configured kubeconfig.
+I0608 15:38:12.584708  109129 request.go:655] Throttling request took 1.050209707s, request: GET:https://api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org:6443/apis/apps/v1?timeout=32s
+    harness.go:285: Successful connection to cluster at: https://api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org:6443

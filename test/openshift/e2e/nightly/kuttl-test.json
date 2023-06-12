@@ -1,0 +1,24 @@
+{
+   "name": "",
+   "tests": 1,
+   "failures": 0,
+   "time": "447.253",
+   "testsuite": [
+     {
+       "tests": 1,
+       "failures": 0,
+       "timestamp": "2023-05-19T16:49:52.476240874+05:30",
+       "time": "437.174",
+       "name": "./parallel",
+       "testcase": [
+         {
+           "classname": "parallel",
+           "name": "1-092_validate_workload_status_monitoring_alert",
+           "timestamp": "2023-05-19T16:49:52.608527238+05:30",
+           "time": "437.041",
+           "assertions": 3
+         }
+       ]
+     }
+   ]
+ }

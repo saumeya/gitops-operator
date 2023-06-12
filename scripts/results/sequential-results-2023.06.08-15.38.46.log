@@ -1,0 +1,473 @@
+2023/06/08 15:38:47 kutt-test config testdirs is overridden with args: [ /home/skatyal/gitops-operator/scripts/../test/openshift/e2e/sequential ]
+=== RUN   kuttl
+    harness.go:457: starting setup
+    harness.go:248: running tests using configured kubeconfig.
+I0608 15:38:49.839355  109644 request.go:655] Throttling request took 1.046003502s, request: GET:https://api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org:6443/apis/operators.coreos.com/v1alpha2?timeout=32s
+    harness.go:285: Successful connection to cluster at: https://api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org:6443
+    harness.go:353: running tests
+    harness.go:74: going to run test suite with timeout of 720 seconds for each step
+    harness.go:365: testsuite: /home/skatyal/gitops-operator/scripts/../test/openshift/e2e/sequential has 26 tests
+=== RUN   kuttl/harness
+=== RUN   kuttl/harness/1-001_validate_kam_service
+=== PAUSE kuttl/harness/1-001_validate_kam_service
+=== RUN   kuttl/harness/1-002_validate_backend_service
+=== PAUSE kuttl/harness/1-002_validate_backend_service
+=== RUN   kuttl/harness/1-004_validate_argocd_installation
+=== PAUSE kuttl/harness/1-004_validate_argocd_installation
+=== RUN   kuttl/harness/1-005_validate_metrics
+=== PAUSE kuttl/harness/1-005_validate_metrics
+=== RUN   kuttl/harness/1-006_validate_machine_config
+=== PAUSE kuttl/harness/1-006_validate_machine_config
+=== RUN   kuttl/harness/1-008_validate-4.9CI-Failures
+=== PAUSE kuttl/harness/1-008_validate-4.9CI-Failures
+=== RUN   kuttl/harness/1-010_validate-ootb-manage-other-namespace
+=== PAUSE kuttl/harness/1-010_validate-ootb-manage-other-namespace
+=== RUN   kuttl/harness/1-018_validate_disable_default_instance
+=== PAUSE kuttl/harness/1-018_validate_disable_default_instance
+=== RUN   kuttl/harness/1-026-validate_backend_service_permissions
+=== PAUSE kuttl/harness/1-026-validate_backend_service_permissions
+=== RUN   kuttl/harness/1-027_validate_operand_from_git
+=== PAUSE kuttl/harness/1-027_validate_operand_from_git
+=== RUN   kuttl/harness/1-028_validate_run_on_infra
+=== PAUSE kuttl/harness/1-028_validate_run_on_infra
+=== RUN   kuttl/harness/1-034_validate_custom_roles
+=== PAUSE kuttl/harness/1-034_validate_custom_roles
+=== RUN   kuttl/harness/1-035_validate_argocd_secret_repopulate
+=== PAUSE kuttl/harness/1-035_validate_argocd_secret_repopulate
+=== RUN   kuttl/harness/1-040_validate_quoted_RBAC_group_names
+=== PAUSE kuttl/harness/1-040_validate_quoted_RBAC_group_names
+=== RUN   kuttl/harness/1-041_validate_argocd_sync_alert
+=== PAUSE kuttl/harness/1-041_validate_argocd_sync_alert
+=== RUN   kuttl/harness/1-042_validate_status_host
+=== PAUSE kuttl/harness/1-042_validate_status_host
+=== RUN   kuttl/harness/1-050_validate_sso_config
+=== PAUSE kuttl/harness/1-050_validate_sso_config
+=== RUN   kuttl/harness/1-056_validate_managed-by
+=== PAUSE kuttl/harness/1-056_validate_managed-by
+=== RUN   kuttl/harness/1-064_validate_tcp_reset_error
+=== PAUSE kuttl/harness/1-064_validate_tcp_reset_error
+=== RUN   kuttl/harness/1-076_validate_single_deprecation_notice
+=== PAUSE kuttl/harness/1-076_validate_single_deprecation_notice
+=== RUN   kuttl/harness/1-077_validate_workload_status_monitoring_alert
+=== PAUSE kuttl/harness/1-077_validate_workload_status_monitoring_alert
+=== RUN   kuttl/harness/1-078_validate_default_argocd_consoleLink
+=== PAUSE kuttl/harness/1-078_validate_default_argocd_consoleLink
+=== RUN   kuttl/harness/1-083_validate_apps_in_any_namespace
+=== PAUSE kuttl/harness/1-083_validate_apps_in_any_namespace
+=== RUN   kuttl/harness/1-084_validate_prune_templates
+=== PAUSE kuttl/harness/1-084_validate_prune_templates
+=== RUN   kuttl/harness/1-086_validate_rollouts_resources_creation
+=== PAUSE kuttl/harness/1-086_validate_rollouts_resources_creation
+=== RUN   kuttl/harness/1-087_validate_rollout_policyrules
+=== PAUSE kuttl/harness/1-087_validate_rollout_policyrules
+=== CONT  kuttl/harness/1-086_validate_rollouts_resources_creation
+    logger.go:42: 15:38:57 | 1-086_validate_rollouts_resources_creation | Creating namespace: kuttl-test-emerging-lobster
+    logger.go:42: 15:38:57 | 1-086_validate_rollouts_resources_creation/1-install-rolloutmanager | starting test step 1-install-rolloutmanager
+I0608 15:38:59.886721  109644 request.go:655] Throttling request took 1.599641235s, request: GET:https://api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org:6443/apis/oauth.openshift.io/v1?timeout=32s
+    logger.go:42: 15:39:01 | 1-086_validate_rollouts_resources_creation/1-install-rolloutmanager | RolloutManager:kuttl-test-emerging-lobster/example-rollout-manager created
+    logger.go:42: 15:39:20 | 1-086_validate_rollouts_resources_creation/1-install-rolloutmanager | test step completed 1-install-rolloutmanager
+    logger.go:42: 15:39:20 | 1-086_validate_rollouts_resources_creation/2- | starting test step 2-
+I0608 15:39:22.391614  109644 request.go:655] Throttling request took 1.000733354s, request: GET:https://api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org:6443/apis/monitoring.coreos.com/v1alpha1?timeout=32s
+    logger.go:42: 15:39:24 | 1-086_validate_rollouts_resources_creation/2- | test step completed 2-
+    logger.go:42: 15:39:24 | 1-086_validate_rollouts_resources_creation | skipping kubernetes event logging
+    logger.go:42: 15:39:24 | 1-086_validate_rollouts_resources_creation | Deleting namespace: kuttl-test-emerging-lobster
+=== CONT  kuttl/harness/1-001_validate_kam_service
+    logger.go:42: 15:39:24 | 1-001_validate_kam_service | Creating namespace: kuttl-test-promoted-wallaby
+    logger.go:42: 15:39:24 | 1-001_validate_kam_service/1-check-kam-service | starting test step 1-check-kam-service
+    logger.go:42: 15:39:29 | 1-001_validate_kam_service/1-check-kam-service | test step completed 1-check-kam-service
+    logger.go:42: 15:39:29 | 1-001_validate_kam_service/2-check-route | starting test step 2-check-route
+    logger.go:42: 15:39:29 | 1-001_validate_kam_service/2-check-route | running command: [sh -c status=$(oc get -n openshift-gitops route kam -o json | jq -r .status)
+        route_admitted=$(echo "$status" | jq -r '.ingress[0].conditions[0].type')
+        route_status=$(echo "$status" | jq -r '.ingress[0].conditions[0].status')
+        route_host=$(echo "$status" | jq -r '.ingress[0].host')
+        router_name=$(echo "$status" | jq -r '.ingress[0].routerName')
+        route_wildcard_policy=$(echo "$status" | jq -r '.ingress[0].wildcardPolicy')
+        if test "$route_admitted" != "Admitted" -o "$route_status" != "True"; then
+          echo "Route not ready"
+          exit 1
+        fi
+        if test "$route_host" = ""; then
+          echo "Route has no host"
+          exit 1
+        fi
+        if test "$router_name" != "default"; then
+          echo "Router is not default"
+          exit 1
+        fi
+        if test "$route_wildcard_policy" != "None"; then
+          echo "Route wildcard policy is not None"
+          exit 1
+        fi
+        exit 0
+        ]
+I0608 15:39:33.621788  109644 request.go:655] Throttling request took 1.000733765s, request: GET:https://api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org:6443/apis/console.openshift.io/v1?timeout=32s
+    logger.go:42: 15:39:35 | 1-001_validate_kam_service/2-check-route | test step completed 2-check-route
+    logger.go:42: 15:39:35 | 1-001_validate_kam_service/3-check-download | starting test step 3-check-download
+    logger.go:42: 15:39:35 | 1-001_validate_kam_service/3-check-download | running command: [sh -c set -e
+        base_url=$(oc get -n openshift-gitops route kam -o json | jq -r '.status.ingress[0].host')
+        curl -k --silent -o/dev/null "${base_url}/kam/kam_linux_amd64"
+        curl -k --silent -o/dev/null "${base_url}/kam/kam_darwin_amd64"
+        curl -k --silent -o/dev/null "${base_url}/kam/kam_windows_amd64.exe"
+        ]
+    logger.go:42: 15:39:40 | 1-001_validate_kam_service/3-check-download | test step completed 3-check-download
+    logger.go:42: 15:39:40 | 1-001_validate_kam_service | skipping kubernetes event logging
+    logger.go:42: 15:39:40 | 1-001_validate_kam_service | Deleting namespace: kuttl-test-promoted-wallaby
+=== CONT  kuttl/harness/1-084_validate_prune_templates
+2023/06/08 15:39:41 object detected with no GVK Kind for path /home/skatyal/gitops-operator/test/openshift/e2e/sequential/1-084_validate_prune_templates/01-assert.yaml
+2023/06/08 15:39:41 object detected with no GVK Kind for path /home/skatyal/gitops-operator/test/openshift/e2e/sequential/1-084_validate_prune_templates/01-create-ns-managed-by.yaml
+2023/06/08 15:39:41 object detected with no GVK Kind for path /home/skatyal/gitops-operator/test/openshift/e2e/sequential/1-084_validate_prune_templates/02-prune-duplicateGVK-resource.yaml
+2023/06/08 15:39:41 object detected with no GVK Kind for path /home/skatyal/gitops-operator/test/openshift/e2e/sequential/1-084_validate_prune_templates/03-errors.yaml
+2023/06/08 15:39:41 object detected with no GVK Kind for path /home/skatyal/gitops-operator/test/openshift/e2e/sequential/1-084_validate_prune_templates/04-delete.yaml
+    logger.go:42: 15:39:41 | 1-084_validate_prune_templates | Creating namespace: kuttl-test-certain-possum
+    logger.go:42: 15:39:41 | 1-084_validate_prune_templates/1-create-ns-managed-by | starting test step 1-create-ns-managed-by
+I0608 15:39:43.631065  109644 request.go:655] Throttling request took 1.900650302s, request: GET:https://api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org:6443/apis/flowcontrol.apiserver.k8s.io/v1beta1?timeout=32s
+    logger.go:42: 15:39:44 | 1-084_validate_prune_templates/1-create-ns-managed-by | test step completed 1-create-ns-managed-by
+    logger.go:42: 15:39:44 | 1-084_validate_prune_templates/2-prune-duplicateGVK-resource | starting test step 2-prune-duplicateGVK-resource
+    logger.go:42: 15:39:47 | 1-084_validate_prune_templates/2-prune-duplicateGVK-resource | test step completed 2-prune-duplicateGVK-resource
+    logger.go:42: 15:39:47 | 1-084_validate_prune_templates/3- | starting test step 3-
+    logger.go:42: 15:39:50 | 1-084_validate_prune_templates/3- | test step completed 3-
+    logger.go:42: 15:39:50 | 1-084_validate_prune_templates/4-delete | starting test step 4-delete
+    logger.go:42: 15:39:53 | 1-084_validate_prune_templates/4-delete | test step completed 4-delete
+    logger.go:42: 15:39:53 | 1-084_validate_prune_templates | skipping kubernetes event logging
+    logger.go:42: 15:39:53 | 1-084_validate_prune_templates | Deleting namespace: kuttl-test-certain-possum
+=== CONT  kuttl/harness/1-083_validate_apps_in_any_namespace
+    logger.go:42: 15:39:53 | 1-083_validate_apps_in_any_namespace | Ignoring errors.yaml as it does not match file name regexp: ^(\d+)-(?:[^\.]+)(?:\.yaml)?$
+    logger.go:42: 15:39:53 | 1-083_validate_apps_in_any_namespace | Creating namespace: kuttl-test-evident-rat
+    logger.go:42: 15:39:53 | 1-083_validate_apps_in_any_namespace/1-create-ns-managed-by | starting test step 1-create-ns-managed-by
+I0608 15:39:55.206479  109644 request.go:655] Throttling request took 1.000404427s, request: GET:https://api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org:6443/apis/policy/v1?timeout=32s
+    logger.go:42: 15:39:57 | 1-083_validate_apps_in_any_namespace/1-create-ns-managed-by | Namespace:/test-1-24-custom updated
+    logger.go:42: 15:40:01 | 1-083_validate_apps_in_any_namespace/1-create-ns-managed-by | test step completed 1-create-ns-managed-by
+    logger.go:42: 15:40:01 | 1-083_validate_apps_in_any_namespace/2-add-source-ns | starting test step 2-add-source-ns
+    logger.go:42: 15:40:04 | 1-083_validate_apps_in_any_namespace/2-add-source-ns | ArgoCD:openshift-gitops/openshift-gitops updated
+    logger.go:42: 15:40:08 | 1-083_validate_apps_in_any_namespace/2-add-source-ns | test step completed 2-add-source-ns
+    logger.go:42: 15:40:08 | 1-083_validate_apps_in_any_namespace/3-delete | starting test step 3-delete
+I0608 15:40:16.029959  109644 request.go:655] Throttling request took 1.000430838s, request: GET:https://api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org:6443/apis/flowcontrol.apiserver.k8s.io/v1beta2?timeout=32s
+    logger.go:42: 15:40:17 | 1-083_validate_apps_in_any_namespace/3-delete | test step completed 3-delete
+    logger.go:42: 15:40:17 | 1-083_validate_apps_in_any_namespace/4-change-source-namespaces | starting test step 4-change-source-namespaces
+    logger.go:42: 15:40:21 | 1-083_validate_apps_in_any_namespace/4-change-source-namespaces | ArgoCD:openshift-gitops/openshift-gitops updated
+    logger.go:42: 15:40:21 | 1-083_validate_apps_in_any_namespace/4-change-source-namespaces | test step completed 4-change-source-namespaces
+    logger.go:42: 15:40:21 | 1-083_validate_apps_in_any_namespace/5-create-ns-and-add-source-ns | starting test step 5-create-ns-and-add-source-ns
+    logger.go:42: 15:40:25 | 1-083_validate_apps_in_any_namespace/5-create-ns-and-add-source-ns | Namespace:/test-1-24-custom created
+    logger.go:42: 15:40:27 | 1-083_validate_apps_in_any_namespace/5-create-ns-and-add-source-ns | ArgoCD:openshift-gitops/openshift-gitops updated
+    logger.go:42: 15:40:47 | 1-083_validate_apps_in_any_namespace/5-create-ns-and-add-source-ns | test step completed 5-create-ns-and-add-source-ns
+    logger.go:42: 15:40:47 | 1-083_validate_apps_in_any_namespace/6-add-managed-by | starting test step 6-add-managed-by
+I0608 15:40:49.459173  109644 request.go:655] Throttling request took 1.00021247s, request: GET:https://api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org:6443/apis/authorization.k8s.io/v1?timeout=32s
+    logger.go:42: 15:40:51 | 1-083_validate_apps_in_any_namespace/6-add-managed-by | Namespace:/test-1-24-custom updated
+    logger.go:42: 15:40:54 | 1-083_validate_apps_in_any_namespace/6-add-managed-by | test step completed 6-add-managed-by
+    logger.go:42: 15:40:54 | 1-083_validate_apps_in_any_namespace/7-remove-managed-by | starting test step 7-remove-managed-by
+    logger.go:42: 15:40:54 | 1-083_validate_apps_in_any_namespace/7-remove-managed-by | running command: [sh -c oc label ns test-1-24-custom argocd.argoproj.io/managed-by-]
+    logger.go:42: 15:40:56 | 1-083_validate_apps_in_any_namespace/7-remove-managed-by | namespace/test-1-24-custom labeled
+    logger.go:42: 15:40:56 | 1-083_validate_apps_in_any_namespace/7-remove-managed-by | running command: [sh -c oc rollout restart deployment.apps/openshift-gitops-server -n openshift-gitops]
+    logger.go:42: 15:40:57 | 1-083_validate_apps_in_any_namespace/7-remove-managed-by | deployment.apps/openshift-gitops-server restarted
+    logger.go:42: 15:40:57 | 1-083_validate_apps_in_any_namespace/7-remove-managed-by | running command: [sh -c oc rollout restart statefulset.apps/openshift-gitops-application-controller -n openshift-gitops]
+    logger.go:42: 15:40:58 | 1-083_validate_apps_in_any_namespace/7-remove-managed-by | statefulset.apps/openshift-gitops-application-controller restarted
+    logger.go:42: 15:40:58 | 1-083_validate_apps_in_any_namespace/7-remove-managed-by | running command: [sh -c sleep 5]
+I0608 15:41:05.393649  109644 request.go:655] Throttling request took 1.049850938s, request: GET:https://api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org:6443/api/v1?timeout=32s
+    logger.go:42: 15:41:34 | 1-083_validate_apps_in_any_namespace/7-remove-managed-by | test step completed 7-remove-managed-by
+    logger.go:42: 15:41:34 | 1-083_validate_apps_in_any_namespace/8-change-source-namespaces | starting test step 8-change-source-namespaces
+I0608 15:41:35.805472  109644 request.go:655] Throttling request took 1.000711155s, request: GET:https://api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org:6443/api/v1?timeout=32s
+    logger.go:42: 15:41:37 | 1-083_validate_apps_in_any_namespace/8-change-source-namespaces | ArgoCD:openshift-gitops/openshift-gitops updated
+    logger.go:42: 15:41:39 | 1-083_validate_apps_in_any_namespace/8-change-source-namespaces | test step completed 8-change-source-namespaces
+    logger.go:42: 15:41:39 | 1-083_validate_apps_in_any_namespace/99-delete | starting test step 99-delete
+I0608 15:41:47.464859  109644 request.go:655] Throttling request took 1.048788973s, request: GET:https://api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org:6443/apis/monitoring.coreos.com/v1?timeout=32s
+    logger.go:42: 15:41:49 | 1-083_validate_apps_in_any_namespace/99-delete | test step completed 99-delete
+    logger.go:42: 15:41:49 | 1-083_validate_apps_in_any_namespace | skipping kubernetes event logging
+    logger.go:42: 15:41:49 | 1-083_validate_apps_in_any_namespace | Deleting namespace: kuttl-test-evident-rat
+=== CONT  kuttl/harness/1-078_validate_default_argocd_consoleLink
+    logger.go:42: 15:41:49 | 1-078_validate_default_argocd_consoleLink | Creating namespace: kuttl-test-maximum-duck
+    logger.go:42: 15:41:49 | 1-078_validate_default_argocd_consoleLink/1- | starting test step 1-
+    logger.go:42: 15:41:53 | 1-078_validate_default_argocd_consoleLink/1- | test step completed 1-
+    logger.go:42: 15:41:53 | 1-078_validate_default_argocd_consoleLink/2-add_env | starting test step 2-add_env
+    logger.go:42: 15:41:53 | 1-078_validate_default_argocd_consoleLink/2-add_env | running command: [sh -c if ! [ -z $NON_OLM ]; then
+          oc patch deployment gitops-operator-controller-manager -n gitops-operator-system \
+            -p '{"spec":{"template":{"spec":{"containers":[{"name":"manager","env":[{"name":"DISABLE_DEFAULT_ARGOCD_CONSOLELINK","value":"true"}]}]}}}}'
+        elif [ -z $CI ]; then
+          oc patch -n openshift-operators subscription openshift-gitops-operator \
+            --type merge --patch '{"spec": {"config": {"env": [{"name": "DISABLE_DEFAULT_ARGOCD_CONSOLELINK", "value": "true"}]}}}'
+        else
+          oc patch -n openshift-operators subscription `subscription=gitops-operator- && oc get subscription --all-namespaces | grep $subscription | head -1 | awk '{print $2}'` \
+            --type merge --patch '{"spec": {"config": {"env": [{"name": "DISABLE_DEFAULT_ARGOCD_CONSOLELINK", "value": "true"}]}}}'
+        fi
+        ]
+    logger.go:42: 15:41:54 | 1-078_validate_default_argocd_consoleLink/2-add_env | deployment.apps/gitops-operator-controller-manager patched
+I0608 15:41:57.479876  109644 request.go:655] Throttling request took 1.796954404s, request: GET:https://api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org:6443/apis/autoscaling/v2beta2?timeout=32s
+    logger.go:42: 15:42:23 | 1-078_validate_default_argocd_consoleLink/2-add_env | test step completed 2-add_env
+    logger.go:42: 15:42:23 | 1-078_validate_default_argocd_consoleLink/3-check-env | starting test step 3-check-env
+    logger.go:42: 15:42:23 | 1-078_validate_default_argocd_consoleLink/3-check-env | running command: [sh -c if ! [ -z $NON_OLM ]; then
+          label_value='"true"'
+          if ! [[ "${label_value}" == '"true"' ]]; then
+            echo "Label value: $label_value"
+            echo "DISABLE_DEFAULT_ARGOCD_CONSOLELINK not set"
+            exit 1
+          else
+            exit 0
+          fi
+        elif [ -z $CI ]; then
+          label_value=$(oc get  subscriptions openshift-gitops-operator -n openshift-operators -o json | jq '.spec.config.env[]|select(.name=="DISABLE_DEFAULT_ARGOCD_CONSOLELINK").value')
+          if ! [[ "${label_value}" == '"true"' ]]; then
+            echo "Label value: $label_value"
+            echo "DISABLE_DEFAULT_ARGOCD_CONSOLELINK not set"
+            exit 1
+          else
+            exit 0
+          fi
+        
+        else
+          label_value=$(oc get subscription `subscription=gitops-operator- && oc get subscription --all-namespaces | grep $subscription | head -1 | awk '{print $2}'` -n openshift-operators -o json | jq '.spec.config.env[]|select(.name=="DISABLE_DEFAULT_ARGOCD_CONSOLELINK").value')
+          
+          if ! [[ "${label_value}" == '"true"' ]]; then
+            echo "Label value: $label_value"
+            echo "DISABLE_DEFAULT_ARGOCD_CONSOLELINK not set"
+            exit 1
+          else
+            exit 0
+          fi
+          
+        fi
+        ]
+I0608 15:42:25.361585  109644 request.go:655] Throttling request took 1.04868202s, request: GET:https://api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org:6443/apis/operators.coreos.com/v1?timeout=32s
+    logger.go:42: 15:42:26 | 1-078_validate_default_argocd_consoleLink/3-check-env | test step completed 3-check-env
+    logger.go:42: 15:42:26 | 1-078_validate_default_argocd_consoleLink/4-disable-env | starting test step 4-disable-env
+    logger.go:42: 15:42:26 | 1-078_validate_default_argocd_consoleLink/4-disable-env | running command: [sh -c if ! [ -z $NON_OLM ]; then
+          oc patch deployment gitops-operator-controller-manager -n gitops-operator-system \
+            -p '{"spec":{"template":{"spec":{"containers":[{"name":"manager","env":[{"name":"DISABLE_DEFAULT_ARGOCD_CONSOLELINK","value":"false"}]}]}}}}'
+        
+        elif [ -z $CI ]; then
+          oc patch -n openshift-operators subscription openshift-gitops-operator \
+            --type merge --patch '{"spec": {"config": {"env": [{"name": "DISABLE_DEFAULT_ARGOCD_CONSOLELINK", "value": "false"}]}}}'
+        else
+          oc patch -n openshift-operators subscription `subscription=gitops-operator- && oc get subscription --all-namespaces | grep $subscription | head -1 | awk '{print $2}'` \
+            --type merge --patch '{"spec": {"config": {"env": [{"name": "DISABLE_DEFAULT_ARGOCD_CONSOLELINK", "value": "false"}]}}}'
+        fi
+        ]
+    logger.go:42: 15:42:28 | 1-078_validate_default_argocd_consoleLink/4-disable-env | deployment.apps/gitops-operator-controller-manager patched
+    logger.go:42: 15:43:00 | 1-078_validate_default_argocd_consoleLink/4-disable-env | test step completed 4-disable-env
+    logger.go:42: 15:43:00 | 1-078_validate_default_argocd_consoleLink/5-check-env | starting test step 5-check-env
+    logger.go:42: 15:43:00 | 1-078_validate_default_argocd_consoleLink/5-check-env | running command: [sh -c if ! [ -z $NON_OLM ]; then
+          label_value='"false"'
+          if ! [[ "${label_value}" == '"false"' ]]; then
+            echo "Label value: $label_value"
+            echo "DISABLE_DEFAULT_ARGOCD_CONSOLELINK set"
+            exit 1
+          else
+            exit 0
+          fi
+        elif [ -z $CI ]; then
+          label_value=$(oc get  subscriptions openshift-gitops-operator -n openshift-operators -o json | jq '.spec.config.env[]|select(.name=="DISABLE_DEFAULT_ARGOCD_CONSOLELINK").value')
+        
+          if ! [[ "${label_value}" == '"false"' ]]; then
+            echo "DISABLE_DEFAULT_ARGOCD_CONSOLELINK set"
+            exit 1
+          else
+            exit 0
+          fi
+        
+        else
+          label_value=$(oc get subscription `subscription=gitops-operator- && oc get subscription --all-namespaces | grep $subscription | head -1 | awk '{print $2}'` -n openshift-operators -o json | jq '.spec.config.env[]|select(.name=="DISABLE_DEFAULT_ARGOCD_CONSOLELINK").value')
+          
+          if ! [[ "${label_value}" == '"false"' ]]; then
+            echo "DISABLE_DEFAULT_ARGOCD_CONSOLELINK set"
+            exit 1
+          else
+            exit 0
+          fi
+          
+        fi
+        ]
+I0608 15:43:01.499608  109644 request.go:655] Throttling request took 1.000894453s, request: GET:https://api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org:6443/apis/quota.openshift.io/v1?timeout=32s
+    logger.go:42: 15:43:03 | 1-078_validate_default_argocd_consoleLink/5-check-env | test step completed 5-check-env
+    logger.go:42: 15:43:03 | 1-078_validate_default_argocd_consoleLink/6-empty-valued-env | starting test step 6-empty-valued-env
+    logger.go:42: 15:43:03 | 1-078_validate_default_argocd_consoleLink/6-empty-valued-env | running command: [sh -c if ! [ -z $NON_OLM ]; then
+          oc patch deployment gitops-operator-controller-manager -n gitops-operator-system \
+            -p '{"spec":{"template":{"spec":{"containers":[{"name":"manager","env":[{"name":"DISABLE_DEFAULT_ARGOCD_CONSOLELINK","value":""}]}]}}}}'
+        
+        elif [ -z $CI ]; then
+          oc patch -n openshift-operators subscription openshift-gitops-operator \
+            --type merge --patch '{"spec": {"config": {"env": [{"name": "DISABLE_DEFAULT_ARGOCD_CONSOLELINK", "value": ""}]}}}'
+        else
+          oc patch -n openshift-operators subscription `subscription=gitops-operator- && oc get subscription --all-namespaces | grep $subscription | head -1 | awk '{print $2}'` \
+            --type merge --patch '{"spec": {"config": {"env": [{"name": "DISABLE_DEFAULT_ARGOCD_CONSOLELINK", "value": ""}]}}}'
+        fi
+        ]
+    logger.go:42: 15:43:04 | 1-078_validate_default_argocd_consoleLink/6-empty-valued-env | deployment.apps/gitops-operator-controller-manager patched
+    logger.go:42: 15:43:08 | 1-078_validate_default_argocd_consoleLink/6-empty-valued-env | test step completed 6-empty-valued-env
+    logger.go:42: 15:43:08 | 1-078_validate_default_argocd_consoleLink/7-check-env | starting test step 7-check-env
+    logger.go:42: 15:43:08 | 1-078_validate_default_argocd_consoleLink/7-check-env | running command: [sh -c if ! [ -z $NON_OLM ]; then
+          label_value='""'
+          if ! [[ "${label_value}" == '""' ]]; then
+            echo "DISABLE_DEFAULT_ARGOCD_CONSOLELINK is set to ${label_value}"
+            exit 1
+          else
+            exit 0
+          fi
+        elif [ -z $CI ]; then
+          label_value=$(oc get  subscriptions openshift-gitops-operator -n openshift-operators -o json | jq '.spec.config.env[]|select(.name=="DISABLE_DEFAULT_ARGOCD_CONSOLELINK").value')
+        
+          if ! [[ "${label_value}" == '""' ]]; then
+            echo "DISABLE_DEFAULT_ARGOCD_CONSOLELINK is set to ${label_value}"
+            exit 1
+          else
+            exit 0
+          fi
+        
+        else
+          label_value=$(oc get subscription `subscription=gitops-operator- && oc get subscription --all-namespaces | grep $subscription | head -1 | awk '{print $2}'` -n openshift-operators -o json | jq '.spec.config.env[]|select(.name=="DISABLE_DEFAULT_ARGOCD_CONSOLELINK").value')
+          
+          if ! [[ "${label_value}" == '""' ]]; then
+            echo "DISABLE_DEFAULT_ARGOCD_CONSOLELINK is set to ${label_value}"
+            exit 1
+          else
+            exit 0
+          fi
+          
+        fi
+        ]
+    logger.go:42: 15:43:11 | 1-078_validate_default_argocd_consoleLink/7-check-env | test step completed 7-check-env
+    logger.go:42: 15:43:11 | 1-078_validate_default_argocd_consoleLink/8-remove-env | starting test step 8-remove-env
+    logger.go:42: 15:43:11 | 1-078_validate_default_argocd_consoleLink/8-remove-env | running command: [sh -c if ! [ -z $NON_OLM ]; then
+          oc patch deployment gitops-operator-controller-manager -n gitops-operator-system \
+            -p '{"spec":{"template":{"spec":{"containers":[{"name":"manager","env":[{"name":"DISABLE_DEFAULT_ARGOCD_CONSOLELINK","value":null}]}]}}}}'
+        
+        elif [ -z $CI ]; then
+            oc -n openshift-operators patch subscription openshift-gitops-operator --type='json' -p='[{"op": "remove", "path": "/spec/config" }]'
+        else
+            oc -n openshift-operators patch subscription `subscription=gitops-operator- && oc get subscription --all-namespaces | grep $subscription | head -1 | awk '{print $2}'` --type='json' -p='[{"op": "remove", "path": "/spec/config" }]'
+        fi
+        ]
+    logger.go:42: 15:43:12 | 1-078_validate_default_argocd_consoleLink/8-remove-env | deployment.apps/gitops-operator-controller-manager patched (no change)
+I0608 15:43:14.229782  109644 request.go:655] Throttling request took 1.000021051s, request: GET:https://api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org:6443/apis/project.openshift.io/v1?timeout=32s
+    logger.go:42: 15:43:16 | 1-078_validate_default_argocd_consoleLink/8-remove-env | test step completed 8-remove-env
+    logger.go:42: 15:43:16 | 1-078_validate_default_argocd_consoleLink | skipping kubernetes event logging
+    logger.go:42: 15:43:16 | 1-078_validate_default_argocd_consoleLink | Deleting namespace: kuttl-test-maximum-duck
+=== CONT  kuttl/harness/1-077_validate_workload_status_monitoring_alert
+2023/06/08 15:43:16 object detected with no GVK Kind for path /home/skatyal/gitops-operator/test/openshift/e2e/sequential/1-077_validate_workload_status_monitoring_alert/01-assert.yaml
+2023/06/08 15:43:16 object detected with no GVK Kind for path /home/skatyal/gitops-operator/test/openshift/e2e/sequential/1-077_validate_workload_status_monitoring_alert/01-install.yaml
+2023/06/08 15:43:16 object detected with no GVK Kind for path /home/skatyal/gitops-operator/test/openshift/e2e/sequential/1-077_validate_workload_status_monitoring_alert/02-verify-alert.yaml
+    logger.go:42: 15:43:16 | 1-077_validate_workload_status_monitoring_alert | Creating namespace: kuttl-test-ready-maggot
+    logger.go:42: 15:43:16 | 1-077_validate_workload_status_monitoring_alert/1-install | starting test step 1-install
+    logger.go:42: 15:43:19 | 1-077_validate_workload_status_monitoring_alert/1-install | test step completed 1-install
+    logger.go:42: 15:43:19 | 1-077_validate_workload_status_monitoring_alert/2-verify-alert | starting test step 2-verify-alert
+    logger.go:42: 15:43:22 | 1-077_validate_workload_status_monitoring_alert/2-verify-alert | test step completed 2-verify-alert
+    logger.go:42: 15:43:22 | 1-077_validate_workload_status_monitoring_alert | skipping kubernetes event logging
+    logger.go:42: 15:43:22 | 1-077_validate_workload_status_monitoring_alert | Deleting namespace: kuttl-test-ready-maggot
+=== CONT  kuttl/harness/1-027_validate_operand_from_git
+    logger.go:42: 15:43:22 | 1-027_validate_operand_from_git | Creating namespace: kuttl-test-known-haddock
+    logger.go:42: 15:43:23 | 1-027_validate_operand_from_git/1- | starting test step 1-
+I0608 15:43:24.651442  109644 request.go:655] Throttling request took 1.000400947s, request: GET:https://api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org:6443/apis/cloud.network.openshift.io/v1?timeout=32s
+    logger.go:42: 15:43:26 | 1-027_validate_operand_from_git/1- | test step completed 1-
+    logger.go:42: 15:43:26 | 1-027_validate_operand_from_git/2-install | starting test step 2-install
+    logger.go:42: 15:43:29 | 1-027_validate_operand_from_git/2-install | Application:openshift-gitops/1-27-argocd created
+    logger.go:42: 15:43:46 | 1-027_validate_operand_from_git/2-install | test step completed 2-install
+    logger.go:42: 15:43:46 | 1-027_validate_operand_from_git/3-create-app | starting test step 3-create-app
+I0608 15:43:47.806754  109644 request.go:655] Throttling request took 1.000382621s, request: GET:https://api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org:6443/apis/autoscaling/v2?timeout=32s
+    logger.go:42: 15:43:49 | 1-027_validate_operand_from_git/3-create-app | Application:test-1-27-custom/guestbook created
+    logger.go:42: 15:55:50 | 1-027_validate_operand_from_git/3-create-app | test step failed 3-create-app
+    case.go:361: failed in step 3-create-app
+    case.go:363: Get "https://api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org:6443/apis/apps/v1/namespaces/test-1-27-custom/deployments/argocd-redis": dial tcp: lookup api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org on 127.0.0.1:53: no such host
+    case.go:363: Get "https://api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org:6443/apis/apps/v1/namespaces/test-1-27-custom/deployments/argocd-repo-server": dial tcp: lookup api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org on 127.0.0.1:53: no such host
+    case.go:363: Get "https://api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org:6443/apis/apps/v1/namespaces/test-1-27-custom/deployments/argocd-server": dial tcp: lookup api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org on 127.0.0.1:53: no such host
+    case.go:363: Get "https://api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org:6443/apis/apps/v1/namespaces/test-1-27-custom/deployments/nginx-deployment": dial tcp: lookup api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org on 127.0.0.1:53: no such host
+    case.go:363: retrieving API resource for /v1, Kind=Namespace failed: Get "https://api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org:6443/api/v1?timeout=32s": dial tcp: lookup api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org on 127.0.0.1:53: no such host
+    case.go:363: Get "https://api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org:6443/apis/argoproj.io/v1alpha1/namespaces/openshift-gitops/applications/1-27-argocd": dial tcp: lookup api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org on 127.0.0.1:53: no such host
+    case.go:363: Get "https://api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org:6443/apis/argoproj.io/v1alpha1/namespaces/test-1-27-custom/argocds/argocd": dial tcp: lookup api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org on 127.0.0.1:53: no such host
+    case.go:363: Get "https://api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org:6443/apis/argoproj.io/v1alpha1/namespaces/test-1-27-custom/applications/guestbook": dial tcp: lookup api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org on 127.0.0.1:53: no such host
+    logger.go:42: 15:55:50 | 1-027_validate_operand_from_git | skipping kubernetes event logging
+    case.go:352: Delete "https://api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org:6443/apis/argoproj.io/v1alpha1/namespaces/test-1-27-custom/applications/guestbook": dial tcp: lookup api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org on 127.0.0.1:53: no such host
+    case.go:352: Delete "https://api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org:6443/apis/argoproj.io/v1alpha1/namespaces/test-1-27-custom/applications/guestbook": dial tcp: lookup api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org on 127.0.0.1:53: no such host
+    case.go:352: Delete "https://api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org:6443/apis/argoproj.io/v1alpha1/namespaces/test-1-27-custom/applications/guestbook": dial tcp: lookup api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org on 127.0.0.1:53: no such host
+    logger.go:42: 15:55:50 | 1-027_validate_operand_from_git | Deleting namespace: kuttl-test-known-haddock
+    case.go:330: Delete "https://api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org:6443/api/v1/namespaces/kuttl-test-known-haddock": dial tcp: lookup api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org on 127.0.0.1:53: no such host
+=== CONT  kuttl/harness/1-026-validate_backend_service_permissions
+    logger.go:42: 15:55:50 | 1-026-validate_backend_service_permissions | Creating namespace: kuttl-test-normal-oarfish
+    case.go:322: Post "https://api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org:6443/api/v1/namespaces": dial tcp: lookup api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org on 127.0.0.1:53: no such host
+=== CONT  kuttl/harness/1-018_validate_disable_default_instance
+    logger.go:42: 15:55:50 | 1-018_validate_disable_default_instance | Ignoring errors.yaml as it does not match file name regexp: ^(\d+)-(?:[^\.]+)(?:\.yaml)?$
+    logger.go:42: 15:55:50 | 1-018_validate_disable_default_instance | Creating namespace: kuttl-test-relieved-werewolf
+    case.go:322: Post "https://api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org:6443/api/v1/namespaces": dial tcp: lookup api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org on 127.0.0.1:53: no such host
+=== CONT  kuttl/harness/1-010_validate-ootb-manage-other-namespace
+    logger.go:42: 15:55:50 | 1-010_validate-ootb-manage-other-namespace | Ignoring README.md as it does not match file name regexp: ^(\d+)-(?:[^\.]+)(?:\.yaml)?$
+    logger.go:42: 15:55:50 | 1-010_validate-ootb-manage-other-namespace | Ignoring errors.yaml as it does not match file name regexp: ^(\d+)-(?:[^\.]+)(?:\.yaml)?$
+    logger.go:42: 15:55:50 | 1-010_validate-ootb-manage-other-namespace | Creating namespace: kuttl-test-becoming-rhino
+    case.go:322: Post "https://api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org:6443/api/v1/namespaces": dial tcp: lookup api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org on 127.0.0.1:53: no such host
+=== CONT  kuttl/harness/1-008_validate-4.9CI-Failures
+    logger.go:42: 15:55:50 | 1-008_validate-4.9CI-Failures | Creating namespace: kuttl-test-devoted-hippo
+    case.go:322: Post "https://api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org:6443/api/v1/namespaces": dial tcp: lookup api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org on 127.0.0.1:53: no such host
+=== CONT  kuttl/harness/1-006_validate_machine_config
+    logger.go:42: 15:55:50 | 1-006_validate_machine_config | Creating namespace: kuttl-test-faithful-dinosaur
+    case.go:322: Post "https://api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org:6443/api/v1/namespaces": dial tcp: lookup api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org on 127.0.0.1:53: no such host
+=== CONT  kuttl/harness/1-005_validate_metrics
+    logger.go:42: 15:55:50 | 1-005_validate_metrics | Creating namespace: kuttl-test-amazing-vulture
+    case.go:322: Post "https://api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org:6443/api/v1/namespaces": dial tcp: lookup api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org on 127.0.0.1:53: no such host
+=== CONT  kuttl/harness/1-004_validate_argocd_installation
+    logger.go:42: 15:55:50 | 1-004_validate_argocd_installation | Creating namespace: kuttl-test-informed-imp
+    case.go:322: Post "https://api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org:6443/api/v1/namespaces": dial tcp: lookup api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org on 127.0.0.1:53: no such host
+=== CONT  kuttl/harness/1-002_validate_backend_service
+    logger.go:42: 15:55:50 | 1-002_validate_backend_service | Creating namespace: kuttl-test-usable-panther
+    case.go:322: Post "https://api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org:6443/api/v1/namespaces": dial tcp: lookup api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org on 127.0.0.1:53: no such host
+=== CONT  kuttl/harness/1-087_validate_rollout_policyrules
+    logger.go:42: 15:55:50 | 1-087_validate_rollout_policyrules | Creating namespace: kuttl-test-square-stud
+    case.go:322: Post "https://api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org:6443/api/v1/namespaces": dial tcp: lookup api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org on 127.0.0.1:53: no such host
+=== CONT  kuttl/harness/1-042_validate_status_host
+    logger.go:42: 15:55:50 | 1-042_validate_status_host | Creating namespace: kuttl-test-awaited-redfish
+    case.go:322: Post "https://api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org:6443/api/v1/namespaces": dial tcp: lookup api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org on 127.0.0.1:53: no such host
+=== CONT  kuttl/harness/1-028_validate_run_on_infra
+    logger.go:42: 15:55:50 | 1-028_validate_run_on_infra | Ignoring errors.yaml as it does not match file name regexp: ^(\d+)-(?:[^\.]+)(?:\.yaml)?$
+    logger.go:42: 15:55:50 | 1-028_validate_run_on_infra | Creating namespace: kuttl-test-patient-cricket
+    case.go:322: Post "https://api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org:6443/api/v1/namespaces": dial tcp: lookup api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org on 127.0.0.1:53: no such host
+=== CONT  kuttl/harness/1-041_validate_argocd_sync_alert
+    logger.go:42: 15:55:50 | 1-041_validate_argocd_sync_alert | Creating namespace: kuttl-test-divine-hyena
+    case.go:322: Post "https://api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org:6443/api/v1/namespaces": dial tcp: lookup api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org on 127.0.0.1:53: no such host
+=== CONT  kuttl/harness/1-040_validate_quoted_RBAC_group_names
+    logger.go:42: 15:55:50 | 1-040_validate_quoted_RBAC_group_names | Creating namespace: kuttl-test-immortal-lizard
+    case.go:322: Post "https://api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org:6443/api/v1/namespaces": dial tcp: lookup api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org on 127.0.0.1:53: no such host
+=== CONT  kuttl/harness/1-035_validate_argocd_secret_repopulate
+    logger.go:42: 15:55:50 | 1-035_validate_argocd_secret_repopulate | Creating namespace: kuttl-test-inspired-bear
+    case.go:322: Post "https://api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org:6443/api/v1/namespaces": dial tcp: lookup api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org on 127.0.0.1:53: no such host
+=== CONT  kuttl/harness/1-076_validate_single_deprecation_notice
+    logger.go:42: 15:55:50 | 1-076_validate_single_deprecation_notice | Creating namespace: kuttl-test-sensible-ghost
+    case.go:322: Post "https://api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org:6443/api/v1/namespaces": dial tcp: lookup api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org on 127.0.0.1:53: no such host
+=== CONT  kuttl/harness/1-034_validate_custom_roles
+    logger.go:42: 15:55:50 | 1-034_validate_custom_roles | Creating namespace: kuttl-test-eager-macaw
+    case.go:322: Post "https://api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org:6443/api/v1/namespaces": dial tcp: lookup api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org on 127.0.0.1:53: no such host
+=== CONT  kuttl/harness/1-064_validate_tcp_reset_error
+    logger.go:42: 15:55:50 | 1-064_validate_tcp_reset_error | Creating namespace: kuttl-test-striking-coral
+    case.go:322: Post "https://api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org:6443/api/v1/namespaces": dial tcp: lookup api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org on 127.0.0.1:53: no such host
+=== CONT  kuttl/harness/1-056_validate_managed-by
+    logger.go:42: 15:55:50 | 1-056_validate_managed-by | Creating namespace: kuttl-test-feasible-egret
+    case.go:322: Post "https://api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org:6443/api/v1/namespaces": dial tcp: lookup api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org on 127.0.0.1:53: no such host
+=== CONT  kuttl/harness/1-050_validate_sso_config
+    logger.go:42: 15:55:50 | 1-050_validate_sso_config | Creating namespace: kuttl-test-handy-sawfish
+    case.go:322: Post "https://api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org:6443/api/v1/namespaces": dial tcp: lookup api.ci-ln-nk317v2-76ef8.aws-2.ci.openshift.org on 127.0.0.1:53: no such host
+=== CONT  kuttl
+    harness.go:399: run tests finished
+    harness.go:508: cleaning up
+    harness.go:563: removing temp folder: ""
+--- FAIL: kuttl (1022.92s)
+    --- FAIL: kuttl/harness (0.00s)
+        --- PASS: kuttl/harness/1-086_validate_rollouts_resources_creation (27.08s)
+        --- PASS: kuttl/harness/1-001_validate_kam_service (16.38s)
+        --- PASS: kuttl/harness/1-084_validate_prune_templates (12.48s)
+        --- PASS: kuttl/harness/1-083_validate_apps_in_any_namespace (116.16s)
+        --- PASS: kuttl/harness/1-078_validate_default_argocd_consoleLink (86.81s)
+        --- PASS: kuttl/harness/1-077_validate_workload_status_monitoring_alert (6.47s)
+        --- FAIL: kuttl/harness/1-027_validate_operand_from_git (747.51s)
+        --- FAIL: kuttl/harness/1-026-validate_backend_service_permissions (0.00s)
+        --- FAIL: kuttl/harness/1-018_validate_disable_default_instance (0.00s)
+        --- FAIL: kuttl/harness/1-010_validate-ootb-manage-other-namespace (0.00s)
+        --- FAIL: kuttl/harness/1-008_validate-4.9CI-Failures (0.00s)
+        --- FAIL: kuttl/harness/1-006_validate_machine_config (0.00s)
+        --- FAIL: kuttl/harness/1-005_validate_metrics (0.00s)
+        --- FAIL: kuttl/harness/1-004_validate_argocd_installation (0.00s)
+        --- FAIL: kuttl/harness/1-002_validate_backend_service (0.00s)
+        --- FAIL: kuttl/harness/1-087_validate_rollout_policyrules (0.00s)
+        --- FAIL: kuttl/harness/1-042_validate_status_host (0.00s)
+        --- FAIL: kuttl/harness/1-028_validate_run_on_infra (0.01s)
+        --- FAIL: kuttl/harness/1-041_validate_argocd_sync_alert (0.00s)
+        --- FAIL: kuttl/harness/1-040_validate_quoted_RBAC_group_names (0.00s)
+        --- FAIL: kuttl/harness/1-035_validate_argocd_secret_repopulate (0.00s)
+        --- FAIL: kuttl/harness/1-076_validate_single_deprecation_notice (0.00s)
+        --- FAIL: kuttl/harness/1-034_validate_custom_roles (0.01s)
+        --- FAIL: kuttl/harness/1-064_validate_tcp_reset_error (0.00s)
+        --- FAIL: kuttl/harness/1-056_validate_managed-by (0.01s)
+        --- FAIL: kuttl/harness/1-050_validate_sso_config (0.01s)
+FAIL

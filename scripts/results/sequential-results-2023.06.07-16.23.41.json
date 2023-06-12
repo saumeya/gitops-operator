@@ -1,0 +1,245 @@
+{
+   "name": "",
+   "tests": 28,
+   "failures": 9,
+   "time": "5389.475",
+   "testsuite": [
+     {
+       "tests": 28,
+       "failures": 9,
+       "timestamp": "2023-06-07T16:23:58.278903567+05:30",
+       "time": "5374.228",
+       "name": "/home/skatyal/gitops-operator/scripts/../test/openshift/e2e/sequential",
+       "testcase": [
+         {
+           "classname": "sequential",
+           "name": "1-001_validate_kam_service",
+           "timestamp": "2023-06-07T16:23:58.280126538+05:30",
+           "time": "22.835",
+           "assertions": 4
+         },
+         {
+           "classname": "sequential",
+           "name": "1-087_validate_rollout_policyrules",
+           "timestamp": "2023-06-07T16:24:21.116153689+05:30",
+           "time": "730.225",
+           "assertions": 1,
+           "failure": {
+             "text": "roles.rbac.authorization.k8s.io \"argo-rollouts\" not found",
+             "message": "failed in step 1-install-rolloutmanager"
+           }
+         },
+         {
+           "classname": "sequential",
+           "name": "1-086_validate_rollouts_resources_creation",
+           "timestamp": "2023-06-07T16:36:31.344091614+05:30",
+           "time": "728.790",
+           "assertions": 9,
+           "failure": {
+             "text": "services \"argo-rollouts-metrics\" not found",
+             "message": "failed in step 1-install-rolloutmanager"
+           }
+         },
+         {
+           "classname": "sequential",
+           "name": "1-085_validate_dynamic_plugin_installation",
+           "timestamp": "2023-06-07T16:48:40.135126891+05:30",
+           "time": "19.473",
+           "assertions": 8,
+           "failure": {
+             "text": "exit status 1",
+             "message": "failed in step 2-install-dynamic-plugin"
+           }
+         },
+         {
+           "classname": "sequential",
+           "name": "1-084_validate_prune_templates",
+           "timestamp": "2023-06-07T16:48:59.610299963+05:30",
+           "time": "19.536"
+         },
+         {
+           "classname": "sequential",
+           "name": "1-083_validate_apps_in_any_namespace",
+           "timestamp": "2023-06-07T16:49:19.152293805+05:30",
+           "time": "773.226",
+           "assertions": 37,
+           "failure": {
+             "text": "rolebindings.rbac.authorization.k8s.io \"openshift-gitops_test-1-24-custom\" not found",
+             "message": "failed in step 5-create-ns-and-add-source-ns"
+           }
+         },
+         {
+           "classname": "sequential",
+           "name": "1-078_validate_default_argocd_consoleLink",
+           "timestamp": "2023-06-07T17:02:12.381589694+05:30",
+           "time": "726.223",
+           "assertions": 2,
+           "failure": {
+             "text": "consolelinks.console.openshift.io \"argocd\" not found",
+             "message": "failed in step 1-"
+           }
+         },
+         {
+           "classname": "sequential",
+           "name": "1-077_validate_workload_status_monitoring_alert",
+           "timestamp": "2023-06-07T17:14:18.60616803+05:30",
+           "time": "10.421"
+         },
+         {
+           "classname": "sequential",
+           "name": "1-076_validate_single_deprecation_notice",
+           "timestamp": "2023-06-07T17:14:29.032778807+05:30",
+           "time": "731.576",
+           "assertions": 3,
+           "failure": {
+             "text": "argocds.argoproj.io \"openshift-gitops\" not found",
+             "message": "failed in step 1-install"
+           }
+         },
+         {
+           "classname": "sequential",
+           "name": "1-064_validate_tcp_reset_error",
+           "timestamp": "2023-06-07T17:26:40.609571107+05:30",
+           "time": "725.513",
+           "assertions": 1,
+           "failure": {
+             "text": "argocds.argoproj.io \"openshift-gitops\" not found",
+             "message": "failed in step 1-"
+           }
+         },
+         {
+           "classname": "sequential",
+           "name": "1-056_validate_managed-by",
+           "timestamp": "2023-06-07T17:38:46.126958626+05:30",
+           "time": "103.317",
+           "assertions": 15
+         },
+         {
+           "classname": "sequential",
+           "name": "1-050_validate_sso_config",
+           "timestamp": "2023-06-07T17:40:29.447668532+05:30",
+           "time": "165.170",
+           "assertions": 38
+         },
+         {
+           "classname": "sequential",
+           "name": "1-042_validate_status_host",
+           "timestamp": "2023-06-07T17:43:14.62027937+05:30",
+           "time": "49.151",
+           "assertions": 3
+         },
+         {
+           "classname": "sequential",
+           "name": "1-041_validate_argocd_sync_alert",
+           "timestamp": "2023-06-07T17:44:03.772472343+05:30",
+           "time": "5.937",
+           "assertions": 2
+         },
+         {
+           "classname": "sequential",
+           "name": "1-040_validate_quoted_RBAC_group_names",
+           "timestamp": "2023-06-07T17:44:09.71124062+05:30",
+           "time": "28.478"
+         },
+         {
+           "classname": "sequential",
+           "name": "1-035_validate_argocd_secret_repopulate",
+           "timestamp": "2023-06-07T17:44:38.191741906+05:30",
+           "time": "54.607",
+           "assertions": 1,
+           "failure": {
+             "text": "exit status 1",
+             "message": "failed in step 4-check_controller_pod_status"
+           }
+         },
+         {
+           "classname": "sequential",
+           "name": "1-034_validate_custom_roles",
+           "timestamp": "2023-06-07T17:45:32.800846688+05:30",
+           "time": "81.609",
+           "assertions": 15
+         },
+         {
+           "classname": "sequential",
+           "name": "1-031_validate_toolchain",
+           "timestamp": "2023-06-07T17:46:54.411379481+05:30",
+           "time": "25.837",
+           "failure": {
+             "text": "exit status 1",
+             "message": "failed in step 1-check"
+           }
+         },
+         {
+           "classname": "sequential",
+           "name": "1-028_validate_run_on_infra",
+           "timestamp": "2023-06-07T17:47:20.25380015+05:30",
+           "time": "31.769",
+           "assertions": 20
+         },
+         {
+           "classname": "sequential",
+           "name": "1-027_validate_operand_from_git",
+           "timestamp": "2023-06-07T17:47:52.02687341+05:30",
+           "time": "82.599",
+           "assertions": 12
+         },
+         {
+           "classname": "sequential",
+           "name": "1-026-validate_backend_service_permissions",
+           "timestamp": "2023-06-07T17:49:14.627715296+05:30",
+           "time": "7.220",
+           "assertions": 4
+         },
+         {
+           "classname": "sequential",
+           "name": "1-018_validate_disable_default_instance",
+           "timestamp": "2023-06-07T17:49:21.851655202+05:30",
+           "time": "78.314",
+           "assertions": 10
+         },
+         {
+           "classname": "sequential",
+           "name": "1-010_validate-ootb-manage-other-namespace",
+           "timestamp": "2023-06-07T17:50:40.168520847+05:30",
+           "time": "58.981",
+           "assertions": 10
+         },
+         {
+           "classname": "sequential",
+           "name": "1-008_validate-4.9CI-Failures",
+           "timestamp": "2023-06-07T17:51:39.153434324+05:30",
+           "time": "36.074",
+           "assertions": 11
+         },
+         {
+           "classname": "sequential",
+           "name": "1-006_validate_machine_config",
+           "timestamp": "2023-06-07T17:52:15.228265872+05:30",
+           "time": "38.499",
+           "assertions": 10
+         },
+         {
+           "classname": "sequential",
+           "name": "1-005_validate_metrics",
+           "timestamp": "2023-06-07T17:52:53.729393166+05:30",
+           "time": "6.634",
+           "assertions": 4
+         },
+         {
+           "classname": "sequential",
+           "name": "1-004_validate_argocd_installation",
+           "timestamp": "2023-06-07T17:53:00.365078627+05:30",
+           "time": "25.691",
+           "assertions": 2
+         },
+         {
+           "classname": "sequential",
+           "name": "1-002_validate_backend_service",
+           "timestamp": "2023-06-07T17:53:26.057103903+05:30",
+           "time": "6.450",
+           "assertions": 3
+         }
+       ]
+     }
+   ]
+ }

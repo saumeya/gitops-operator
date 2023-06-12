@@ -1,0 +1,28 @@
+{
+   "name": "",
+   "tests": 1,
+   "failures": 1,
+   "time": "1235.741",
+   "testsuite": [
+     {
+       "tests": 1,
+       "failures": 1,
+       "timestamp": "2023-06-08T15:03:00.891412943+05:30",
+       "time": "1225.493",
+       "name": "./parallel",
+       "testcase": [
+         {
+           "classname": "parallel",
+           "name": "1-036_validate_keycloak_resource_reqs",
+           "timestamp": "2023-06-08T15:03:00.893994635+05:30",
+           "time": "1225.490",
+           "assertions": 11,
+           "failure": {
+             "text": "resource Pod:kuttl-test-sought-kid/keycloak-1-deploy: .status.containerStatuses.state.terminated.reason: value mismatch, expected: Completed != actual: Error",
+             "message": "failed in step 2-update-sso-keycloak-provider"
+           }
+         }
+       ]
+     }
+   ]
+ }

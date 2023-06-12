@@ -1,0 +1,458 @@
+{
+   "name": "",
+   "tests": 57,
+   "failures": 13,
+   "time": "3003.450",
+   "testsuite": [
+     {
+       "tests": 57,
+       "failures": 13,
+       "timestamp": "2023-06-07T19:09:00.116263705+05:30",
+       "time": "2988.030",
+       "name": "/home/skatyal/gitops-operator/scripts/../test/openshift/e2e/parallel",
+       "testcase": [
+         {
+           "classname": "parallel",
+           "name": "1-003_validate_console_link",
+           "timestamp": "2023-06-07T19:09:00.116912745+05:30",
+           "time": "9.996",
+           "assertions": 1
+         },
+         {
+           "classname": "parallel",
+           "name": "1-038_validate_productized_images",
+           "timestamp": "2023-06-07T19:09:00.117622262+05:30",
+           "time": "47.066",
+           "assertions": 1,
+           "failure": {
+             "text": "exit status 1",
+             "message": "failed in step 2-check-images"
+           }
+         },
+         {
+           "classname": "parallel",
+           "name": "1-058_validate_prometheus_rule",
+           "timestamp": "2023-06-07T19:09:00.117854511+05:30",
+           "time": "56.591",
+           "assertions": 2
+         },
+         {
+           "classname": "parallel",
+           "name": "1-053_validate_cluster_admin_rbac",
+           "timestamp": "2023-06-07T19:09:56.709764566+05:30",
+           "time": "39.523",
+           "assertions": 2
+         },
+         {
+           "classname": "parallel",
+           "name": "1-049_validate_parallelism_limit",
+           "timestamp": "2023-06-07T19:09:00.117911981+05:30",
+           "time": "115.684",
+           "assertions": 2
+         },
+         {
+           "classname": "parallel",
+           "name": "1-054_validate_deploymentconfig",
+           "timestamp": "2023-06-07T19:09:47.18434839+05:30",
+           "time": "102.401",
+           "assertions": 5
+         },
+         {
+           "classname": "parallel",
+           "name": "1-055_validate_notification_controller",
+           "timestamp": "2023-06-07T19:09:10.117147613+05:30",
+           "time": "159.845",
+           "assertions": 16
+         },
+         {
+           "classname": "parallel",
+           "name": "1-057_validate_notifications",
+           "timestamp": "2023-06-07T19:09:00.11900548+05:30",
+           "time": "199.095",
+           "assertions": 16
+         },
+         {
+           "classname": "parallel",
+           "name": "1-033_validate_resource_exclusions",
+           "timestamp": "2023-06-07T19:11:49.962515724+05:30",
+           "time": "30.412",
+           "assertions": 2
+         },
+         {
+           "classname": "parallel",
+           "name": "1-025-validate-managed-by-change",
+           "timestamp": "2023-06-07T19:10:36.23784377+05:30",
+           "time": "123.491",
+           "assertions": 5
+         },
+         {
+           "classname": "parallel",
+           "name": "1-051-validate_csv_permissions",
+           "timestamp": "2023-06-07T19:12:20.375768717+05:30",
+           "time": "24.031",
+           "failure": {
+             "text": "exit status 1",
+             "message": "failed in step 1-validate"
+           }
+         },
+         {
+           "classname": "parallel",
+           "name": "1-052_validate_rolebinding_number",
+           "timestamp": "2023-06-07T19:12:19.214596519+05:30",
+           "time": "29.808"
+         },
+         {
+           "classname": "parallel",
+           "name": "1-032_validate_resource_inclusions",
+           "timestamp": "2023-06-07T19:12:39.730836466+05:30",
+           "time": "30.310",
+           "assertions": 2
+         },
+         {
+           "classname": "parallel",
+           "name": "1-098_validate_dex_clientsecret_deprecated",
+           "timestamp": "2023-06-07T19:12:44.408496486+05:30",
+           "time": "38.533",
+           "assertions": 2
+         },
+         {
+           "classname": "parallel",
+           "name": "1-030_validate_reencrypt",
+           "timestamp": "2023-06-07T19:12:49.023082878+05:30",
+           "time": "92.654",
+           "assertions": 3
+         },
+         {
+           "classname": "parallel",
+           "name": "1-087_validate_repo_server_settings",
+           "timestamp": "2023-06-07T19:13:22.942662608+05:30",
+           "time": "64.819",
+           "assertions": 5
+         },
+         {
+           "classname": "parallel",
+           "name": "1-084_validate_status_host_ingress",
+           "timestamp": "2023-06-07T19:14:27.763566754+05:30",
+           "time": "17.406",
+           "assertions": 3
+         },
+         {
+           "classname": "parallel",
+           "name": "1-029_validate_tls_secret_no_scale",
+           "timestamp": "2023-06-07T19:14:21.67790134+05:30",
+           "time": "55.717",
+           "assertions": 4
+         },
+         {
+           "classname": "parallel",
+           "name": "1-012_validate-managed-by-chain",
+           "timestamp": "2023-06-07T19:14:45.172174697+05:30",
+           "time": "100.352",
+           "assertions": 11
+         },
+         {
+           "classname": "parallel",
+           "name": "1-008_validate-custom-argocd-namespace",
+           "timestamp": "2023-06-07T19:16:25.525167323+05:30",
+           "time": "77.858",
+           "assertions": 2
+         },
+         {
+           "classname": "parallel",
+           "name": "1-083_validate_kustomize_namereference",
+           "timestamp": "2023-06-07T19:17:43.384150601+05:30",
+           "time": "39.798",
+           "assertions": 2
+         },
+         {
+           "classname": "parallel",
+           "name": "1-009_validate-manage-other-namespace",
+           "timestamp": "2023-06-07T19:18:23.184481573+05:30",
+           "time": "75.468",
+           "assertions": 10
+         },
+         {
+           "classname": "parallel",
+           "name": "1-023_validate_repo_server_tls",
+           "timestamp": "2023-06-07T19:19:38.657451437+05:30",
+           "time": "84.273",
+           "assertions": 4
+         },
+         {
+           "classname": "parallel",
+           "name": "1-021_validate_rolebindings",
+           "timestamp": "2023-06-07T19:21:02.932400365+05:30",
+           "time": "8.554",
+           "assertions": 4
+         },
+         {
+           "classname": "parallel",
+           "name": "1-007_validate_namespace_scoped_install",
+           "timestamp": "2023-06-07T19:21:11.489127983+05:30",
+           "time": "49.961",
+           "assertions": 10
+         },
+         {
+           "classname": "parallel",
+           "name": "1-082_validate_node_placement",
+           "timestamp": "2023-06-07T19:22:01.451543967+05:30",
+           "time": "82.279",
+           "assertions": 12
+         },
+         {
+           "classname": "parallel",
+           "name": "1-081_validate_applicationset_deployment",
+           "timestamp": "2023-06-07T19:23:23.732566804+05:30",
+           "time": "6.039",
+           "assertions": 3
+         },
+         {
+           "classname": "parallel",
+           "name": "1-019_validate_volume_mounts",
+           "timestamp": "2023-06-07T19:23:29.77511791+05:30",
+           "time": "8.392",
+           "assertions": 4
+         },
+         {
+           "classname": "parallel",
+           "name": "1-073_validate_rhsso",
+           "timestamp": "2023-06-07T19:12:20.380225149+05:30",
+           "time": "1209.163",
+           "assertions": 5,
+           "failure": {
+             "text": "resource DeploymentConfig:kuttl-test-magical-phoenix/keycloak: .status.readyReplicas: key is missing from map",
+             "message": "failed in step 1-argocd-rhsso"
+           }
+         },
+         {
+           "classname": "parallel",
+           "name": "1-077_validate_disable_dex_removed",
+           "timestamp": "2023-06-07T19:32:29.54477176+05:30",
+           "time": "8.975",
+           "failure": {
+             "text": "exit status 1",
+             "message": "failed in step 1-check_disable_dex_removed"
+           }
+         },
+         {
+           "classname": "parallel",
+           "name": "1-036_validate_keycloak_resource_reqs",
+           "timestamp": "2023-06-07T19:11:29.591061222+05:30",
+           "time": "1275.354",
+           "assertions": 11,
+           "failure": {
+             "text": "resource Pod:kuttl-test-tolerant-ant/keycloak-1-deploy: .status.containerStatuses.state.terminated.reason: value mismatch, expected: Completed != actual: Error",
+             "message": "failed in step 2-update-sso-keycloak-provider"
+           }
+         },
+         {
+           "classname": "parallel",
+           "name": "1-045_validate_repo_exec_timeout",
+           "timestamp": "2023-06-07T19:32:44.945340423+05:30",
+           "time": "30.357",
+           "assertions": 1,
+           "failure": {
+             "text": "exit status 1",
+             "message": "failed in step 4-check-workload-env"
+           }
+         },
+         {
+           "classname": "parallel",
+           "name": "1-090_validate_permissions",
+           "timestamp": "2023-06-07T19:13:10.043158563+05:30",
+           "time": "1210.584",
+           "assertions": 1,
+           "failure": {
+             "text": "clusterserviceversions.operators.coreos.com \"gitops-operator.v1.8.0\" not found",
+             "message": "failed in step 1-"
+           }
+         },
+         {
+           "classname": "parallel",
+           "name": "1-075_validate_dex_anyuid",
+           "timestamp": "2023-06-07T19:33:20.629907284+05:30",
+           "time": "33.365",
+           "assertions": 3
+         },
+         {
+           "classname": "parallel",
+           "name": "1-047_validate_custom_env",
+           "timestamp": "2023-06-07T19:33:15.302532043+05:30",
+           "time": "38.692",
+           "assertions": 1
+         },
+         {
+           "classname": "parallel",
+           "name": "1-044_validate_resource_limit_changes",
+           "timestamp": "2023-06-07T19:33:53.995670152+05:30",
+           "time": "39.132",
+           "assertions": 1
+         },
+         {
+           "classname": "parallel",
+           "name": "1-074_validate_terminating_namespace_block",
+           "timestamp": "2023-06-07T19:33:53.996099567+05:30",
+           "time": "55.527",
+           "assertions": 8
+         },
+         {
+           "classname": "parallel",
+           "name": "1-039_validate_fix_argocd-tls-certs-cm",
+           "timestamp": "2023-06-07T19:34:49.525800474+05:30",
+           "time": "33.983",
+           "assertions": 2
+         },
+         {
+           "classname": "parallel",
+           "name": "1-083_validate_resource_customization_subkeys",
+           "timestamp": "2023-06-07T19:15:17.395402508+05:30",
+           "time": "1211.643",
+           "assertions": 2,
+           "failure": {
+             "text": "resource ConfigMap:kuttl-test-wanted-magpie/argocd-cm: .data.resource.customizations.ignoreDifferences.all: key is missing from map",
+             "message": "failed in step 1-argocd-with-resource-customization-subkeys"
+           }
+         },
+         {
+           "classname": "parallel",
+           "name": "1-048_validate_controller_sharding",
+           "timestamp": "2023-06-07T19:34:33.129983069+05:30",
+           "time": "65.845",
+           "assertions": 7
+         },
+         {
+           "classname": "parallel",
+           "name": "1-072_validate_liveness_probe_removed",
+           "timestamp": "2023-06-07T19:35:29.040355358+05:30",
+           "time": "19.794",
+           "assertions": 1
+         },
+         {
+           "classname": "parallel",
+           "name": "1-062_validate_extra_config",
+           "timestamp": "2023-06-07T19:35:38.976031724+05:30",
+           "time": "61.617",
+           "assertions": 6
+         },
+         {
+           "classname": "parallel",
+           "name": "1-043_validate_log_level_format",
+           "timestamp": "2023-06-07T19:36:40.594786437+05:30",
+           "time": "41.196",
+           "assertions": 1
+         },
+         {
+           "classname": "parallel",
+           "name": "1-066_validate_redis_secure_comm_no_autotls_no_ha",
+           "timestamp": "2023-06-07T19:35:23.513084205+05:30",
+           "time": "142.942",
+           "assertions": 13
+         },
+         {
+           "classname": "parallel",
+           "name": "1-061_validate_resource_tracking_method",
+           "timestamp": "2023-06-07T19:37:21.796747858+05:30",
+           "time": "43.392",
+           "assertions": 5
+         },
+         {
+           "classname": "parallel",
+           "name": "1-065_validate_redis_ha_anti_affinity",
+           "timestamp": "2023-06-07T19:38:05.189422734+05:30",
+           "time": "16.496",
+           "assertions": 2
+         },
+         {
+           "classname": "parallel",
+           "name": "1-063_validate_statefulset_restart",
+           "timestamp": "2023-06-07T19:37:46.458126828+05:30",
+           "time": "45.161",
+           "assertions": 3
+         },
+         {
+           "classname": "parallel",
+           "name": "1-064_validate_security_contexts",
+           "timestamp": "2023-06-07T19:38:21.687541107+05:30",
+           "time": "18.228",
+           "assertions": 6
+         },
+         {
+           "classname": "parallel",
+           "name": "1-080_validate_regex_support_argocd_rbac",
+           "timestamp": "2023-06-07T19:23:38.168125579+05:30",
+           "time": "1245.550",
+           "assertions": 6,
+           "failure": {
+             "text": "resource ConfigMap:kuttl-test-perfect-beagle/argocd-rbac-cm: .data.policy.matchMode: key is missing from map",
+             "message": "failed in step 2-modify-argocd"
+           }
+         },
+         {
+           "classname": "parallel",
+           "name": "1-063_validate_dex_liveness_probe",
+           "timestamp": "2023-06-07T19:44:23.721062573+05:30",
+           "time": "6.696",
+           "assertions": 2
+         },
+         {
+           "classname": "parallel",
+           "name": "1-070_validate_config_management_plugin",
+           "timestamp": "2023-06-07T19:44:30.42011985+05:30",
+           "time": "94.632",
+           "assertions": 4
+         },
+         {
+           "classname": "parallel",
+           "name": "1-068_validate_redis_secure_comm_autotls_no_ha",
+           "timestamp": "2023-06-07T19:46:05.053302924+05:30",
+           "time": "113.358",
+           "assertions": 13
+         },
+         {
+           "classname": "parallel",
+           "name": "1-079_validate_vars_for_notificaitons",
+           "timestamp": "2023-06-07T19:32:38.523348462+05:30",
+           "time": "1259.218",
+           "assertions": 8,
+           "failure": {
+             "text": "resource Deployment:kuttl-test-adapting-antelope/example-argocd-notifications-controller: .spec.template.spec.containers.env: key is missing from map",
+             "message": "failed in step 2-modify-argocd"
+           }
+         },
+         {
+           "classname": "parallel",
+           "name": "1-071_validate_SCC_HA",
+           "timestamp": "2023-06-07T19:35:48.836176981+05:30",
+           "time": "1253.153",
+           "assertions": 13,
+           "failure": {
+             "text": "resource Pod:kuttl-test-close-llama/argocd-redis-ha-server-2: .status.phase: value mismatch, expected: Running != actual: Pending",
+             "message": "failed in step 3-modify-argocd"
+           }
+         },
+         {
+           "classname": "parallel",
+           "name": "1-067_validate_redis_secure_comm_no_autotls_ha",
+           "timestamp": "2023-06-07T19:38:31.621625957+05:30",
+           "time": "1206.490",
+           "assertions": 6,
+           "failure": {
+             "text": "resource StatefulSet:kuttl-test-helped-camel/argocd-redis-ha-server: .status.readyReplicas: value mismatch, expected: 3 != actual: 2",
+             "message": "failed in step 1-install"
+           }
+         },
+         {
+           "classname": "parallel",
+           "name": "1-069_validate_redis_secure_comm_autotls_ha",
+           "timestamp": "2023-06-07T19:38:39.918400405+05:30",
+           "time": "1208.228",
+           "assertions": 6,
+           "failure": {
+             "text": "resource StatefulSet:kuttl-test-famous-swan/argocd-redis-ha-server: .status.readyReplicas: value mismatch, expected: 3 != actual: 2",
+             "message": "failed in step 1-install"
+           }
+         }
+       ]
+     }
+   ]
+ }
