@@ -2,13 +2,13 @@
 
 export NON_OLM="true"
 
-WORKING_DIR=../..
-sequential_suite=$WORKING_DIR/test/openshift/e2e/sequential/
-parallel_suite=$WORKING_DIR/test/openshift/e2e/parallel/
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
+sequential_suite=$ROOT/../../test/openshift/e2e/sequential/
+parallel_suite=$ROOT/../../test/openshift/e2e/parallel/
 
 # Check if any argument is provided
 if [ $# -eq 0 ]; then
-    echo "No directory name provided, please add directory names as arguments while running the script"
+    echo "No directory name provided, this will run the entire test suite. Please add directory names that need to be removed as arguments while running the script"
 fi    
 
 # to run nightly tests, add the following files as params
@@ -20,8 +20,8 @@ fi
 # 1-077_validate_disable_dex_removed
 # 1-090_validate_permissions
 
-
-for dir in "$@"; do
+filenames="$@"
+for dir in $filenames ; do
   if [ -d "$sequential_suite/$dir" ]; then
     echo "Deleting directory $dir"
     rm -rf "$sequential_suite/$dir"
@@ -38,7 +38,7 @@ done
 sed -i 's/openshift-operators/gitops-operator-system/g' $sequential_suite/1-018_validate_disable_default_instance/02-assert.yaml \
   $sequential_suite/1-035_validate_argocd_secret_repopulate/04-check_controller_pod_status.yaml
 
-script="$WORKING_DIR/scripts/run-kuttl-tests.sh"
+script="$ROOT/../../scripts/run-kuttl-tests.sh"
 
 # Check if the file exists before executing it
 if [ -e "$script" ]; then
