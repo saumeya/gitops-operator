@@ -36,6 +36,14 @@ func ReconcilerHook(cr *argoapp.ArgoCD, v interface{}, hint string) error {
 			o.Rules = policyRulesForClusterConfig()
 		}
 	case *appsv1.Deployment:
+		if o.ObjectMeta.Name == cr.ObjectMeta.Name+"-server" {
+			if cr.Spec.EnableRolloutUI {
+				// Update the image
+				o.Spec.Template.Spec.InitContainers[0].Image = "quay.io/argoprojlabs/argocd-extension-installer:v0.0.5"
+				// Clear the environment variables (remove EXTENSION_URL)
+				o.Spec.Template.Spec.InitContainers[0].Env = []corev1.EnvVar{}
+			}
+		}
 		if o.ObjectMeta.Name == cr.ObjectMeta.Name+"-redis" {
 			logv.Info("configuring openshift redis")
 			o.Spec.Template.Spec.Containers[0].Args = append(getArgsForRedhatRedis(), o.Spec.Template.Spec.Containers[0].Args...)

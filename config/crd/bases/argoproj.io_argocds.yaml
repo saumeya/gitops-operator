@@ -734,6 +734,9 @@ spec:
               disableAdmin:
                 description: DisableAdmin will disable the admin user.
                 type: boolean
+              enableRolloutUI:
+                description: Enable Rollouts UI extension.
+                type: boolean  
               extraConfig:
                 additionalProperties:
                   type: string
@@ -12019,6 +12022,9 @@ spec:
               disableAdmin:
                 description: DisableAdmin will disable the admin user.
                 type: boolean
+              enableRolloutUI:
+                description: Enable Rollouts UI extension.
+                type: boolean  
               extraConfig:
                 additionalProperties:
                   type: string
